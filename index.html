@@ -1612,7 +1612,7 @@ navToggle.addEventListener('click', ()=> navLinks.classList.toggle('open'));
 navLinks.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> navLinks.classList.remove('open')));
 
 /* ===== LinkedIn posts: simple tiles + in-page reader ===== */
-const POSTS = {"p8":{"pt":8,"en":8,"es":8,"fr":8},"p6":{"pt":3,"en":3,"es":3,"fr":3},"p2":{"pt":6,"en":6,"es":6,"fr":6},"p1":{"en":7,"es":7,"fr":7},"p4":{"pt":7,"en":7,"es":6,"fr":6},"p3":{"pt":4,"en":4,"es":4,"fr":4}};
+const POSTS = {"p8":{"pt":8,"en":8,"es":8,"fr":8},"p6":{"pt":3,"en":3,"es":3,"fr":3},"p2":{"pt":6,"en":6,"es":6,"fr":6},"p1":{"pt":7,"en":7,"es":7,"fr":7},"p4":{"pt":7,"en":7,"es":6,"fr":6},"p3":{"pt":4,"en":4,"es":4,"fr":4}};
 /* which language versions to try, in order, when the chosen one is not available yet */
 const LANG_CHAIN = {en:['en','pt','es','fr'], pt:['pt','es','fr','en'], es:['es','pt','fr','en'], fr:['fr','pt','es','en']};
 function pickLang(post, ui){
