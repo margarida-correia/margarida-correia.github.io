@@ -369,6 +369,9 @@
     display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;padding:22px;
     transition:transform .35s var(--ease),box-shadow .35s var(--ease);
   }
+  .li-tile[hidden]{display:none;}
+  /* even number of posts: the LinkedIn tile takes two columns so the grid has no hole */
+  .li-grid.li-even .li-more{grid-column:span 2;aspect-ratio:2/1;}
   .li-more:hover{transform:translateY(-4px);box-shadow:0 22px 40px -24px rgba(24,20,15,.5);}
   .li-more-icon{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--ink);display:flex;align-items:center;justify-content:center;font:800 14px var(--sans);}
   .li-more-text{font:500 clamp(22px,2.2vw,30px)/1.1 var(--serif);letter-spacing:-.015em;}
@@ -1656,7 +1659,11 @@ function refreshPosts(lang){
     }
     img.alt = title;
     tile.setAttribute('aria-label', title);
+    // posts whose slides are not ready yet stay off the page (they come back once prep-posts has images for them)
+    tile.hidden = !l;
   });
+  const liGrid = document.querySelector('.li-grid');
+  if(liGrid) liGrid.classList.toggle('li-even', liGrid.querySelectorAll('.li-tile[data-post]:not([hidden])').length % 2 === 0);
   pmEl.close.setAttribute('aria-label', getByPath(dict, 'li.close') || 'Close');
   pmEl.prev.setAttribute('aria-label', getByPath(dict, 'li.prev') || 'Previous slide');
   pmEl.next.setAttribute('aria-label', getByPath(dict, 'li.next') || 'Next slide');
