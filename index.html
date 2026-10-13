@@ -593,6 +593,10 @@
 (function(){
   var overlay = document.getElementById('introOverlay');
   if(!overlay) return;
+  try {
+    if(sessionStorage.getItem('mc-intro') === '1' || location.hash.length > 1){ overlay.style.display = 'none'; return; }
+    sessionStorage.setItem('mc-intro', '1');
+  } catch(e) {}
   var revealed = false;
   var ready = false;   /* ignore input while the opening animation plays */
   var startY = null;
@@ -869,7 +873,7 @@
       <div class="timeline" style="margin-bottom:64px;">
         <div class="tl-item">
           <div class="tl-date" data-i18n="exp.edu1.date">2025 - 2026</div>
-          <h3><span data-i18n="exp.edu1.role">Postgraduate in Sports Marketing</span>, <a class="org-link" href="https://www.ipam.pt/" target="_blank" rel="noopener" data-i18n="exp.edu1.org">IPAM Marketing School</a></h3>
+          <h3><span data-i18n="exp.edu1.role">Postgraduate in Sports Marketing &amp; Entertainment (APPM-certified)</span>, <a class="org-link" href="https://www.ipam.pt/" target="_blank" rel="noopener" data-i18n="exp.edu1.org">IPAM Marketing School</a></h3>
         </div>
         <div class="tl-item">
           <div class="tl-date" data-i18n="exp.edu2.date">2020 - 2022</div>
@@ -886,7 +890,7 @@
           <p class="label-small" data-i18n="exp.cert_title">Certifications</p>
           <div class="tags">
             <span class="tag" data-i18n="exp.cert1">Scrum Fundamentals</span>
-            <span class="tag" data-i18n="exp.cert2">PM² (PM Square)</span>
+            <span class="tag" data-i18n="exp.cert2">PM² Project Management Methodology (European Commission)</span>
             <span class="tag" data-i18n="exp.cert3">PMP (35+ PDU) Project Management</span>
             <span class="tag" data-i18n="exp.cert4">Agile Fundamentals</span>
             <span class="tag" data-i18n="exp.cert5">Design Thinking</span>
@@ -912,7 +916,7 @@
     <div class="wrap">
       <span class="eyebrow" data-i18n="test.eyebrow">Testimonials</span>
       <h2 class="section-title" data-i18n="test.title">What people say</h2>
-      <p class="section-intro" data-i18n="test.intro">Feedback from people I've interviewed and worked with throughout my career.</p>
+      <p class="section-intro" data-i18n="test.intro">Feedback from people I've interviewed.</p>
       <div class="grid-3">
         <div class="card testimonial-card">
           <span class="card-tag" data-i18n="test.featured_tag">Featured</span>
@@ -1086,7 +1090,7 @@ const translations = {
       skills_title:"Areas of interest & skills",
       photo_tag:"sport & strategy"
     },
-    skills:["Project Management","Marketing Strategy","Digital Performance","Data & Analytics","Stakeholder Management","Agile / Scrum / PM²","UX & Product Research","CRM Platforms","AI Platforms & Tools","Sports Marketing"],
+    skills:["Project Management","Marketing Strategy","Digital Performance","Data & Analytics","Stakeholder Management","Agile / Scrum / PM²","UX & Product Research","CRM Platforms","AI Platforms & Tools","Sports Marketing & Fan Engagement"],
     portfolio:{
       eyebrow:"Portfolio",
       title:"Projects & work",
@@ -1121,12 +1125,12 @@ const translations = {
       item3:{date:"Sep 2022 - Aug 2023",role:"Marketing Analyst",org:"Deloitte Business Consulting",desc:"Analysed customer, market and competitor data, developed reporting frameworks and supported digital performance analysis across websites, portals and social channels."},
       item4:{date:"Jul - Oct 2021",role:"Economic Analysis Intern",org:"Banco de Portugal",desc:"Supported economic and financial analyses through data collection, validation and interpretation, ensuring methodological rigour in reporting."},
       subheading_edu:"Education",
-      edu1:{date:"2025 - 2026",role:"Postgraduate in Sports Marketing",org:"IPAM Marketing School"},
+      edu1:{date:"2025 - 2026",role:"Postgraduate in Sports Marketing & Entertainment (APPM-certified)",org:"IPAM Marketing School"},
       edu2:{date:"2020 - 2022",role:"Master's Degree in Business",org:"School of Economics, University of Porto"},
       edu3:{date:"2017 - 2020",role:"Bachelor's Degree in Economics",org:"School of Economics, UTAD"},
       cert_title:"Certifications & training",
       cert1:"Scrum Fundamentals",
-      cert2:"PM² (PM Square)",
+      cert2:"PM² Project Management Methodology (European Commission)",
       cert3:"PMP (35+ PDU) Project Management",
       cert4:"Agile Fundamentals",
       cert5:"Design Thinking",
@@ -1140,7 +1144,7 @@ const translations = {
     test:{
       eyebrow:"Testimonials",
       title:"What people say",
-      intro:"Feedback from people I've interviewed and worked with throughout my career.",
+      intro:"Feedback from people I've interviewed.",
       featured_tag:"Featured",
       item1:{quote:"\"Margarida Correia reached out to me about a very interesting project she's developing, exploring different case studies from the world of sport (an area she shows <strong>enormous curiosity and passion</strong> for). She is carrying out a synthesis and analysis piece on each of these cases, always with <strong>great rigour, attention to detail and professionalism</strong>. Thank you, Margarida, for your interest, and congratulations on the serious and dedicated way you have conducted your project.\"",role:"Senior Graphic Designer & Illustrator, Sport Lisboa e Benfica"},
       item2:{quote:"\"Thank you, Margarida Correia, for the opportunity to talk about Académica. <strong>Congratulations on the initiative.</strong>\"",role:"Vice-President, AAC-OAF (Associação Académica de Coimbra), Head of Communications Department"},
@@ -1166,7 +1170,7 @@ const translations = {
     intro:{hint:"Continua a descer"},
     hero:{
       eyebrow:"Portfólio & Marca Pessoal",
-      tagline:"Estratégia de Marketing, Gestão de Projetos & Inovação Digital",
+      tagline:"Marketing, Comunicação & Construção de Marca",
       subtitle:"Este é o meu espaço pessoal e profissional: o meu percurso, os projetos em que trabalhei e o que escrevo no LinkedIn, tudo num só lugar.",
       cta_portfolio:"Ver Portfólio",
       cta_contact:"Contactar",
@@ -1179,7 +1183,7 @@ const translations = {
       skills_title:"Áreas de interesse e competências",
       photo_tag:"desporto & estratégia"
     },
-    skills:["Gestão de Projetos","Estratégia de Marketing","Performance Digital","Dados & Analytics","Gestão de Stakeholders","Agile / Scrum / PM²","UX & Product Research","Plataformas de CRM","Plataformas & Ferramentas de IA","Marketing Desportivo"],
+    skills:["Gestão de Projetos","Estratégia de Marketing","Performance Digital","Dados & Analytics","Gestão de Stakeholders","Agile / Scrum / PM²","UX & Product Research","Plataformas de CRM","Plataformas & Ferramentas de IA","Marketing Desportivo & Fan Engagement"],
     portfolio:{
       eyebrow:"Portfólio",
       title:"Projetos e trabalhos",
@@ -1188,7 +1192,7 @@ const translations = {
       card2:{tag:"Projeto Cliente",title:"Redesenho de Website: Academia Europeia",desc:"Redefini a estrutura do site e a estratégia de conteúdos a partir de uma auditoria de usabilidade e UX. A nova plataforma chegou a 1,2 milhões de visitantes orgânicos por mês e a uma lista de contactos com mais de 500 pessoas."},
       card3:{tag:"Projeto Cliente",title:"Digitalização da Experiência do Cliente: Grupo Hoteleiro",desc:"Desenhei a experiência completa do hóspede (personas, segmentação e benchmarking competitivo) e contribuí para modelos preditivos que ajudaram a atingir 87,8% de satisfação dos hóspedes."},
       card4:{tag:"Projeto Cliente",title:"Estratégia de Gestão de Stakeholders",desc:"Mapeei os objetivos de envolvimento, as prioridades e as plataformas preferidas dos stakeholders e construí um plano de ação que identificou riscos e oportunidades. Reforçou as relações institucionais e apoiou o desenvolvimento da conta a longo prazo."},
-      card5:{tag:"Projeto Cliente",title:"Programa de Fidelização: Grupo Retalhista Islandês",desc:"Análise de dados e síntese estratégica para a equipa executiva, moldando recomendações para um novo programa de fidelização."},
+      card5:{tag:"Projeto Cliente",title:"Programa de Fidelização: Grupo Retalhista Islandês",desc:"Realizei a análise de dados e a síntese estratégica para a equipa executiva, moldando as recomendações para um novo programa de fidelização."},
       card6:{tag:"Projeto Cliente",title:"GEO, CRM e Automação de Marketing com IA",desc:"Implementei estratégias de GEO (Generative Engine Optimisation) e automações com IA para conteúdos sociais, atualizações de website e execução de campanhas, e estruturei sistemas de CRM com pesquisa e inserção de leads e análise de pipeline."}
     },
     li:{
@@ -1210,16 +1214,16 @@ const translations = {
       intro:"Um resumo do meu percurso académico e profissional.",
       subheading_exp:"Experiência",
       item1:{date:"Jun 2026 - Presente",role:"Project Manager",org:"nilg.ai",desc:"Gestão de projetos de GEO (Generative Engine Optimisation) e de estratégias de comunicação em redes sociais para contas de clientes, liderança da pesquisa e implementação de geração de leads com sistemas de CRM e ferramentas de automação com IA, e coordenação da entrega de ponta a ponta de projetos de marketing com IA, da pesquisa à implementação."},
-      item2:{date:"Set 2023 - Jun 2026",role:"Marketing and Strategy Consultant",org:"Deloitte Business Consulting",desc:"Liderança de iniciativas de marketing orientadas por dados, criação de dashboards executivos para decisões semanais de produto e marketing, e análise de VoC e comportamental entre canais."},
-      item3:{date:"Set 2022 - Ago 2023",role:"Marketing Analyst",org:"Deloitte Business Consulting",desc:"Análise de dados de clientes, mercado e concorrência, desenvolvimento de frameworks de reporting e apoio à análise de performance digital em websites, portais e redes sociais."},
+      item2:{date:"Set 2023 - Jun 2026",role:"Consultora de Marketing e Estratégia",org:"Deloitte Business Consulting",desc:"Liderança de iniciativas de marketing orientadas por dados, criação de dashboards executivos para decisões semanais de produto e marketing, e análise de VoC e comportamental entre canais."},
+      item3:{date:"Set 2022 - Ago 2023",role:"Analista de Marketing",org:"Deloitte Business Consulting",desc:"Análise de dados de clientes, mercado e concorrência, desenvolvimento de frameworks de reporting e apoio à análise de performance digital em websites, portais e redes sociais."},
       item4:{date:"Jul - Out 2021",role:"Estagiária de Análise Económica",org:"Banco de Portugal",desc:"Apoio a análises económicas e financeiras através de recolha, validação e interpretação de dados, garantindo rigor metodológico no reporting."},
       subheading_edu:"Formação",
-      edu1:{date:"2025 - 2026",role:"Pós-Graduação em Marketing Desportivo",org:"IPAM Marketing School"},
+      edu1:{date:"2025 - 2026",role:"Pós-Graduação em Marketing de Desporto e Entretenimento (certificada pela APPM)",org:"IPAM Marketing School"},
       edu2:{date:"2020 - 2022",role:"Mestrado em Gestão",org:"Faculdade de Economia, Universidade do Porto"},
       edu3:{date:"2017 - 2020",role:"Licenciatura em Economia",org:"Faculdade de Economia, UTAD"},
       cert_title:"Certificações e formação",
       cert1:"Scrum Fundamentals",
-      cert2:"PM² (PM Square)",
+      cert2:"PM² Metodologia de Gestão de Projetos (Comissão Europeia)",
       cert3:"PMP (35+ PDU) Project Management",
       cert4:"Agile Fundamentals",
       cert5:"Design Thinking",
@@ -1233,7 +1237,7 @@ const translations = {
     test:{
       eyebrow:"Testemunhos",
       title:"O que dizem sobre mim",
-      intro:"Feedback de pessoas que entrevistei e com quem trabalhei ao longo do meu percurso.",
+      intro:"Feedback de pessoas que entrevistei.",
       featured_tag:"Destaque",
       item1:{quote:"\"A Margarida Correia procurou-me no âmbito de um projeto muito interessante que está a desenvolver, onde investiga diferentes casos de estudo dentro do mundo do desporto (uma área pela qual demonstra uma <strong>enorme curiosidade e paixão</strong>). Está a realizar um trabalho de síntese e análise sobre cada um desses casos, sempre com <strong>grande rigor, atenção ao detalhe e profissionalismo</strong>. Obrigada Margarida, pelo teu interesse, e muitos parabéns pela forma séria e dedicada com que tens conduzido o teu projeto.\"",role:"Senior Graphic Designer & Illustrator, Sport Lisboa e Benfica"},
       item2:{quote:"\"Obrigado Margarida Correia pela oportunidade de poder falar sobre a Académica. <strong>Parabéns pela iniciativa.</strong>\"",role:"Vice-Presidente da AAC-OAF (Associação Académica de Coimbra), Responsável pelo Departamento de Comunicação"},
@@ -1259,7 +1263,7 @@ const translations = {
     intro:{hint:"Défiler pour explorer"},
     hero:{
       eyebrow:"Portfolio & Marque Personnelle",
-      tagline:"Stratégie Marketing, Gestion de Projet & Innovation Digitale",
+      tagline:"Marketing, Communication & Construction de Marque",
       subtitle:"Voici mon espace personnel et professionnel : mon parcours, les projets sur lesquels j'ai travaillé et ce que j'écris sur LinkedIn, le tout au même endroit.",
       cta_portfolio:"Voir le portfolio",
       cta_contact:"Me contacter",
@@ -1272,7 +1276,7 @@ const translations = {
       skills_title:"Domaines d'intérêt et compétences",
       photo_tag:"sport & stratégie"
     },
-    skills:["Gestion de Projet","Stratégie Marketing","Performance Digitale","Données & Analytics","Gestion des Parties Prenantes","Agile / Scrum / PM²","UX & Recherche Produit","Plateformes CRM","Plateformes & Outils IA","Marketing Sportif"],
+    skills:["Gestion de Projet","Stratégie Marketing","Performance Digitale","Données & Analytics","Gestion des Parties Prenantes","Agile / Scrum / PM²","UX & Recherche Produit","Plateformes CRM","Plateformes & Outils IA","Marketing Sportif & Fan Engagement"],
     portfolio:{
       eyebrow:"Portfolio",
       title:"Projets et travaux",
@@ -1281,7 +1285,7 @@ const translations = {
       card2:{tag:"Projet Client",title:"Refonte de site web : Académie européenne",desc:"J'ai repensé la structure du site et la stratégie de contenu à partir d'un audit d'utilisabilité et d'UX. La nouvelle plateforme a atteint 1,2 M de visiteurs organiques par mois et une liste de plus de 500 contacts."},
       card3:{tag:"Projet Client",title:"Digitalisation de l'expérience client : groupe hôtelier",desc:"J'ai conçu l'expérience complète du client (personas, segmentation et benchmark concurrentiel) et contribué à des modèles prédictifs qui ont aidé à atteindre 87,8 % de satisfaction."},
       card4:{tag:"Projet Client",title:"Stratégie de gestion des parties prenantes",desc:"J'ai cartographié les objectifs d'engagement, les priorités et les plateformes préférées des parties prenantes, puis construit un plan d'action identifiant risques et opportunités. Il a renforcé les relations institutionnelles et soutenu le développement du compte à long terme."},
-      card5:{tag:"Projet Client",title:"Programme de Fidélité : Groupe de Distribution Islandais",desc:"Analyse de données et synthèse stratégique pour l'équipe exécutive, orientant les recommandations pour un nouveau programme de fidélité."},
+      card5:{tag:"Projet Client",title:"Programme de Fidélité : Groupe de Distribution Islandais",desc:"J'ai réalisé l'analyse de données et la synthèse stratégique pour l'équipe exécutive, orientant les recommandations pour un nouveau programme de fidélité."},
       card6:{tag:"Projet Client",title:"GEO, CRM et automatisation marketing par l'IA",desc:"J'ai mis en place des stratégies GEO (Generative Engine Optimisation) et des automatisations par IA pour les contenus sociaux, les mises à jour de site et l'exécution de campagnes, et structuré des systèmes CRM avec recherche et insertion de leads et analyse du pipeline."}
     },
     li:{
@@ -1303,16 +1307,16 @@ const translations = {
       intro:"Un résumé de mon parcours académique et professionnel.",
       subheading_exp:"Expérience",
       item1:{date:"Juin 2026 - Présent",role:"Project Manager",org:"nilg.ai",desc:"Gestion de projets GEO (Generative Engine Optimisation) et de stratégies de communication sur les réseaux sociaux pour des comptes clients, pilotage de la recherche et de la mise en œuvre de la génération de leads avec des CRM et des outils d'automatisation par IA, et coordination de bout en bout de projets de marketing IA, de la recherche à la mise en œuvre."},
-      item2:{date:"Sept 2023 - Juin 2026",role:"Marketing and Strategy Consultant",org:"Deloitte Business Consulting",desc:"Pilotage d'initiatives marketing fondées sur les données, création de tableaux de bord exécutifs pour les décisions hebdomadaires de produit et de marketing, et analyses VoC et comportementales multicanal."},
-      item3:{date:"Sept 2022 - Août 2023",role:"Marketing Analyst",org:"Deloitte Business Consulting",desc:"Analyse des données clients, de marché et concurrentielles, développement de cadres de reporting et soutien à l'analyse de performance digitale sur sites web, portails et réseaux sociaux."},
+      item2:{date:"Sept 2023 - Juin 2026",role:"Consultante Marketing et Stratégie",org:"Deloitte Business Consulting",desc:"Pilotage d'initiatives marketing fondées sur les données, création de tableaux de bord exécutifs pour les décisions hebdomadaires de produit et de marketing, et analyses VoC et comportementales multicanal."},
+      item3:{date:"Sept 2022 - Août 2023",role:"Analyste Marketing",org:"Deloitte Business Consulting",desc:"Analyse des données clients, de marché et concurrentielles, développement de cadres de reporting et soutien à l'analyse de performance digitale sur sites web, portails et réseaux sociaux."},
       item4:{date:"Juil - Oct 2021",role:"Stagiaire en Analyse Économique",org:"Banco de Portugal",desc:"Soutien aux analyses économiques et financières via la collecte, la validation et l'interprétation des données, garantissant la rigueur méthodologique du reporting."},
       subheading_edu:"Formation",
-      edu1:{date:"2025 - 2026",role:"Postgraduate en Marketing Sportif",org:"IPAM Marketing School"},
+      edu1:{date:"2025 - 2026",role:"Postgraduate en Sports Marketing & Entertainment (certifié APPM)",org:"IPAM Marketing School"},
       edu2:{date:"2020 - 2022",role:"Master en Gestion",org:"École d'Économie, Université de Porto"},
       edu3:{date:"2017 - 2020",role:"Licence en Économie",org:"École d'Économie, UTAD"},
       cert_title:"Certifications et formations",
       cert1:"Scrum Fundamentals",
-      cert2:"PM² (PM Square)",
+      cert2:"PM² Méthodologie de gestion de projet (Commission européenne)",
       cert3:"PMP (35+ PDU) Project Management",
       cert4:"Agile Fundamentals",
       cert5:"Design Thinking",
@@ -1326,7 +1330,7 @@ const translations = {
     test:{
       eyebrow:"Témoignages",
       title:"Ce que l'on dit de moi",
-      intro:"Retours de personnes que j'ai interviewées et avec qui j'ai travaillé au fil de mon parcours.",
+      intro:"Retours de personnes que j'ai interviewées.",
       featured_tag:"À la une",
       item1:{quote:"\"Margarida Correia m'a contactée dans le cadre d'un projet très intéressant qu'elle développe, où elle explore différentes études de cas dans le monde du sport (un domaine pour lequel elle montre une <strong>énorme curiosité et passion</strong>). Elle réalise un travail de synthèse et d'analyse sur chacun de ces cas, toujours avec <strong>beaucoup de rigueur, d'attention aux détails et de professionnalisme</strong>. Merci, Margarida, pour ton intérêt, et félicitations pour la manière sérieuse et engagée avec laquelle tu as mené ton projet.\"",role:"Senior Graphic Designer & Illustrator, Sport Lisboa e Benfica"},
       item2:{quote:"\"Merci, Margarida Correia, pour l'opportunité de parler de l'Académica. <strong>Félicitations pour cette initiative.</strong>\"",role:"Vice-Président, AAC-OAF (Associação Académica de Coimbra), Responsable du Département de Communication"},
@@ -1352,7 +1356,7 @@ const translations = {
     intro:{hint:"Desliza para explorar"},
     hero:{
       eyebrow:"Portafolio y Marca Personal",
-      tagline:"Estrategia de Marketing, Gestión de Proyectos e Innovación Digital",
+      tagline:"Marketing, Comunicación y Construcción de Marca",
       subtitle:"Este es mi espacio personal y profesional: mi trayectoria, los proyectos en los que he trabajado y lo que escribo en LinkedIn, todo en un solo lugar.",
       cta_portfolio:"Ver Portafolio",
       cta_contact:"Contactar",
@@ -1365,7 +1369,7 @@ const translations = {
       skills_title:"Áreas de interés y habilidades",
       photo_tag:"deporte & estrategia"
     },
-    skills:["Gestión de Proyectos","Estrategia de Marketing","Rendimiento Digital","Datos y Analítica","Gestión de Stakeholders","Agile / Scrum / PM²","UX e Investigación de Producto","Plataformas CRM","Plataformas y Herramientas de IA","Marketing Deportivo"],
+    skills:["Gestión de Proyectos","Estrategia de Marketing","Rendimiento Digital","Datos y Analítica","Gestión de Stakeholders","Agile / Scrum / PM²","UX e Investigación de Producto","Plataformas CRM","Plataformas y Herramientas de IA","Marketing Deportivo y Fan Engagement"],
     portfolio:{
       eyebrow:"Portafolio",
       title:"Proyectos y trabajos",
@@ -1374,7 +1378,7 @@ const translations = {
       card2:{tag:"Proyecto Cliente",title:"Rediseño de sitio web: Academia europea",desc:"Rediseñé la estructura del sitio y la estrategia de contenidos a partir de una auditoría de usabilidad y UX. La nueva plataforma alcanzó 1,2 M de visitantes orgánicos al mes y una lista de más de 500 contactos."},
       card3:{tag:"Proyecto Cliente",title:"Digitalización de la experiencia del cliente: grupo hotelero",desc:"Diseñé la experiencia completa del huésped (personas, segmentación y benchmarking competitivo) y contribuí a modelos predictivos que ayudaron a alcanzar un 87,8 % de satisfacción."},
       card4:{tag:"Proyecto Cliente",title:"Estrategia de gestión de stakeholders",desc:"Mapeé los objetivos de implicación, las prioridades y las plataformas preferidas de los stakeholders y construí un plan de acción que identificó riesgos y oportunidades. Reforzó las relaciones institucionales y apoyó el desarrollo de la cuenta a largo plazo."},
-      card5:{tag:"Proyecto Cliente",title:"Programa de Fidelización: Grupo Minorista Islandés",desc:"Análisis de datos y síntesis estratégica para el equipo ejecutivo, dando forma a las recomendaciones para un nuevo programa de fidelización."},
+      card5:{tag:"Proyecto Cliente",title:"Programa de Fidelización: Grupo Minorista Islandés",desc:"Realicé el análisis de datos y la síntesis estratégica para el equipo ejecutivo, dando forma a las recomendaciones para un nuevo programa de fidelización."},
       card6:{tag:"Proyecto Cliente",title:"GEO, CRM y automatización de marketing con IA",desc:"Implementé estrategias de GEO (Generative Engine Optimisation) y automatizaciones con IA para contenidos sociales, actualizaciones web y ejecución de campañas, y estructuré sistemas de CRM con investigación e inserción de leads y análisis del pipeline."}
     },
     li:{
@@ -1396,16 +1400,16 @@ const translations = {
       intro:"Un resumen de mi trayectoria académica y profesional.",
       subheading_exp:"Experiencia",
       item1:{date:"Jun 2026 - Presente",role:"Project Manager",org:"nilg.ai",desc:"Gestión de proyectos de GEO (Generative Engine Optimisation) y de estrategias de comunicación en redes sociales para cuentas de clientes, dirección de la investigación e implementación de generación de leads con CRM y herramientas de automatización con IA, y coordinación de extremo a extremo de proyectos de marketing con IA, de la investigación a la implementación."},
-      item2:{date:"Sep 2023 - Jun 2026",role:"Marketing and Strategy Consultant",org:"Deloitte Business Consulting",desc:"Liderazgo de iniciativas de marketing basadas en datos, creación de dashboards ejecutivos para decisiones semanales de producto y marketing, y análisis VoC y de comportamiento en distintos canales."},
-      item3:{date:"Sep 2022 - Ago 2023",role:"Marketing Analyst",org:"Deloitte Business Consulting",desc:"Análisis de datos de clientes, mercado y competencia, desarrollo de marcos de reporting y apoyo al análisis de rendimiento digital en sitios web, portales y redes sociales."},
+      item2:{date:"Sep 2023 - Jun 2026",role:"Consultora de Marketing y Estrategia",org:"Deloitte Business Consulting",desc:"Liderazgo de iniciativas de marketing basadas en datos, creación de dashboards ejecutivos para decisiones semanales de producto y marketing, y análisis VoC y de comportamiento en distintos canales."},
+      item3:{date:"Sep 2022 - Ago 2023",role:"Analista de Marketing",org:"Deloitte Business Consulting",desc:"Análisis de datos de clientes, mercado y competencia, desarrollo de marcos de reporting y apoyo al análisis de rendimiento digital en sitios web, portales y redes sociales."},
       item4:{date:"Jul - Oct 2021",role:"Becaria de Análisis Económico",org:"Banco de Portugal",desc:"Apoyo a análisis económicos y financieros mediante la recopilación, validación e interpretación de datos, garantizando el rigor metodológico en los informes."},
       subheading_edu:"Formación",
-      edu1:{date:"2025 - 2026",role:"Posgrado en Marketing Deportivo",org:"IPAM Marketing School"},
+      edu1:{date:"2025 - 2026",role:"Posgrado en Marketing Deportivo y Entretenimiento (certificado APPM)",org:"IPAM Marketing School"},
       edu2:{date:"2020 - 2022",role:"Máster en Empresariales",org:"Facultad de Economía, Universidad de Oporto"},
       edu3:{date:"2017 - 2020",role:"Grado en Economía",org:"Facultad de Economía, UTAD"},
       cert_title:"Certificaciones y formación",
       cert1:"Scrum Fundamentals",
-      cert2:"PM² (PM Square)",
+      cert2:"PM² Metodología de gestión de proyectos (Comisión Europea)",
       cert3:"PMP (35+ PDU) Project Management",
       cert4:"Agile Fundamentals",
       cert5:"Design Thinking",
@@ -1419,7 +1423,7 @@ const translations = {
     test:{
       eyebrow:"Testimonios",
       title:"Lo que dicen de mí",
-      intro:"Comentarios de personas que he entrevistado y con las que he trabajado a lo largo de mi carrera.",
+      intro:"Comentarios de personas a las que he entrevistado.",
       featured_tag:"Destacado",
       item1:{quote:"\"Margarida Correia me contactó en el marco de un proyecto muy interesante que está desarrollando, en el que explora diferentes casos de estudio dentro del mundo del deporte (un área por la que muestra una <strong>enorme curiosidad y pasión</strong>). Está realizando un trabajo de síntesis y análisis sobre cada uno de esos casos, siempre con <strong>gran rigor, atención al detalle y profesionalidad</strong>. Gracias, Margarida, por tu interés, y muchas felicidades por la forma seria y dedicada con la que has llevado adelante tu proyecto.\"",role:"Senior Graphic Designer & Illustrator, Sport Lisboa e Benfica"},
       item2:{quote:"\"Gracias, Margarida Correia, por la oportunidad de hablar sobre la Académica. <strong>Enhorabuena por la iniciativa.</strong>\"",role:"Vicepresidente, AAC-OAF (Associação Académica de Coimbra), Responsable del Departamento de Comunicación"},
