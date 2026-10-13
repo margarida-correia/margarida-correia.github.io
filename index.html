@@ -95,6 +95,9 @@
     object-fit:cover;object-position:46% 38%;
     transform:scale(1.18);animation:introZoom 3.2s cubic-bezier(.22,1,.36,1) 1.4s forwards;
   }
+  /* portrait screens crop the landscape photo hard: centre on her + the newspaper (about 60% across the frame) */
+  @media (max-aspect-ratio:1/1){.intro-photo{object-position:73% 38%;}}
+  @media (max-aspect-ratio:3/5){.intro-photo{object-position:67% 38%;}}
   .intro-scrim{
     position:absolute;inset:0;pointer-events:none;
     background:
@@ -547,7 +550,15 @@
       border-bottom:1px solid var(--line);display:none;margin-left:0;
     }
     .nav-links.open{display:flex;}
-    .lang-switch{margin-left:0;padding-left:0;border-left:none;padding-top:14px;border-top:1px solid var(--line);width:100%;}
+    /* language switch stays visible in the bar, next to the menu button */
+    .lang-switch{margin-left:auto;padding-left:0;border-left:none;gap:4px;}
+    .lang-switch button{font-size:12px;padding:8px 10px;border:1px solid var(--line);letter-spacing:.1em;}
+    .lang-switch button.active{border-color:var(--ink);}
+    .nav-toggle{margin-left:12px;padding:6px 11px;}
+  }
+  @media (max-width:380px){
+    .lang-switch button{padding:7px 8px;font-size:11.5px;}
+    .nav-toggle{margin-left:8px;}
   }
   @media (max-width:900px){
     section{padding:84px 20px;}
@@ -661,13 +672,13 @@
       <li><a href="#experiencia" data-i18n="nav.experience">Experience</a></li>
       <li><a href="#testemunhos" data-i18n="nav.testimonials">Testimonials</a></li>
       <li><a href="#contacto" data-i18n="nav.contact">Contact</a></li>
-      <li class="lang-switch">
-        <button data-lang="en">EN</button><span class="sep">/</span>
-        <button data-lang="pt">PT</button><span class="sep">/</span>
-        <button data-lang="fr">FR</button><span class="sep">/</span>
-        <button data-lang="es">ES</button>
-      </li>
     </ul>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button data-lang="en">EN</button><span class="sep">/</span>
+      <button data-lang="pt">PT</button><span class="sep">/</span>
+      <button data-lang="fr">FR</button><span class="sep">/</span>
+      <button data-lang="es">ES</button>
+    </div>
     <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
   </nav>
 </header>
