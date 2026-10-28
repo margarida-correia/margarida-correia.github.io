@@ -472,10 +472,34 @@
   .tl-desc ul{list-style:none;margin-top:12px;display:flex;flex-direction:column;gap:9px;}
   .tl-desc li{position:relative;padding-left:18px;}
   .tl-desc li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:1.5px;background:var(--orange);}
-  /* tools: chips grouped by area */
-  .tools{margin-top:56px;}
-  .tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
-  .tools-label{font:700 11px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:12px;}
+  /* certifications, languages and tools: bento cards */
+  .bento{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .bento-card{border-radius:4px;padding:30px 28px;background:var(--paper);border:1px solid var(--line);display:flex;flex-direction:column;}
+  .bento-certs{grid-column:span 2;}
+  .bento-eyebrow{font:800 11px var(--sans);letter-spacing:.16em;text-transform:uppercase;margin-bottom:20px;}
+  .bento-list{list-style:none;columns:2;column-gap:36px;}
+  .bento-list li{break-inside:avoid;position:relative;padding:0 0 12px 18px;font:500 15.5px/1.4 var(--sans);}
+  .bento-list li::before{content:"";position:absolute;left:0;top:.55em;width:7px;height:7px;border-radius:50%;background:var(--orange);}
+  .bento-langs{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+  .bento-langs .bento-eyebrow{color:var(--yellow);}
+  .lang-list{list-style:none;display:flex;flex-direction:column;gap:14px;}
+  .lang-list li{display:flex;align-items:baseline;gap:16px;font:500 15px var(--sans);color:rgba(243,236,220,.82);}
+  .lang-code{font:500 34px/1 var(--serif);color:var(--paper);min-width:52px;letter-spacing:-.01em;}
+  .bento-head{margin-top:56px;}
+  .tool-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;}
+  .tool-num{font:italic 500 34px/1 var(--serif);color:var(--orange-ink);}
+  .tool-icon{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+  .tool-title{font:500 25px/1.15 var(--serif);letter-spacing:-.01em;margin-bottom:10px;}
+  .tool-desc{font-size:15px;color:var(--ink-soft);margin-bottom:22px;}
+  .tool-card .tags{margin-top:auto;gap:8px;}
+  .tool-card .tag{padding:7px 13px;font-size:12px;}
+  .tool-yellow{background:var(--yellow);border-color:var(--yellow);}
+  .tool-yellow .tool-num{color:var(--ink);}
+  .tool-yellow .tool-desc{color:rgba(24,20,15,.78);}
+  .tool-ink{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+  .tool-ink .tool-num{color:var(--yellow);}
+  .tool-ink .tool-desc{color:rgba(243,236,220,.75);}
+  .tool-ink .tag{color:var(--paper);border-color:rgba(243,236,220,.5);}
   .org-link{border-bottom:1.5px solid var(--orange);transition:color .15s;}
   .org-link:hover{color:var(--orange-ink);}
   .cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;}
@@ -583,7 +607,10 @@
     .grid-3{grid-template-columns:1fr;}
     .li-grid{grid-template-columns:repeat(2,1fr);gap:22px 14px;}
     .cert-grid{grid-template-columns:1fr;gap:40px;}
-    .tools-grid{grid-template-columns:1fr;gap:32px;}
+    .bento{grid-template-columns:1fr;gap:14px;}
+    .bento-certs{grid-column:auto;}
+    .bento-list{columns:1;}
+    .bento-card{padding:26px 22px;}
     .contact-top{grid-template-columns:1fr;gap:56px;margin-bottom:56px;}
     .contact-photo{max-width:300px;margin-left:16px;}
     .contact-grid{grid-template-columns:1fr;gap:48px;}
@@ -793,6 +820,21 @@
           <h3 data-i18n="portfolio.card6.title">GEO, CRM &amp; AI Marketing Automation</h3>
           <p data-i18n="portfolio.card6.desc">Implemented GEO (Generative Engine Optimisation) strategies and AI-driven automations for social content, website updates and campaign execution, and structured CRM systems with end-to-end lead research and pipeline analysis.</p>
         </div>
+        <div class="card" data-proj="gym">
+          <span class="card-tag" data-i18n="portfolio.card7.tag">Client Project</span>
+          <h3 data-i18n="portfolio.card7.title">Acquisition &amp; Retention Platform: Gym Chain</h3>
+          <p data-i18n="portfolio.card7.desc">Built an acquisition and retention platform integrating Meta Lead Ads, Zoho CRM and MVF software, with a retention risk model that flagged 655 at-risk members. Delivered in 3 months across 371 releases.</p>
+        </div>
+        <div class="card" data-proj="aiplat">
+          <span class="card-tag" data-i18n="portfolio.card8.tag">Client Project</span>
+          <h3 data-i18n="portfolio.card8.title">AI Marketing &amp; Lead-Generation Platform</h3>
+          <p data-i18n="portfolio.card8.desc">Delivered in 2 months an AI-powered platform managing content across 9 channels, turning YouTube live sessions into ready-to-publish carousels and recovering 251 archived content assets.</p>
+        </div>
+        <div class="card" data-proj="agency">
+          <span class="card-tag" data-i18n="portfolio.card9.tag">Client Project</span>
+          <h3 data-i18n="portfolio.card9.title">AI Strategy: Full-Service Digital Agency</h3>
+          <p data-i18n="portfolio.card9.desc">Co-led an AI strategy engagement, running stakeholder sessions to diagnose bottlenecks and build a prioritised automation roadmap.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -873,7 +915,7 @@
         <div class="tl-item">
           <div class="tl-date" data-i18n="exp.item1.date">Jun 2026 - Present</div>
           <h3><span data-i18n="exp.item1.role">Project Manager</span>, <a class="org-link" href="https://nilg.ai/" target="_blank" rel="noopener" data-i18n="exp.item1.org">NILG.AI</a></h3>
-          <div class="tl-desc" data-i18n-html="exp.item1.desc"><p>AI and software development consultancy focused on marketing and business growth.</p><ul><li>Primary contact for client leadership across a multi-industry portfolio, including fitness, finance and marketing agencies, turning business goals into roadmaps and advising on emerging AI and martech opportunities.</li><li>Built an acquisition and retention platform for a gym chain integrating Meta Lead Ads, Zoho CRM and MVF software, with a retention risk model that flagged 655 at-risk members; delivered in 3 months across 371 releases.</li><li>Delivered in 2 months an AI-powered marketing and lead-generation platform managing content across 9 channels, turning YouTube live sessions into ready-to-publish carousels and recovering 251 archived content assets.</li><li>Co-led an AI strategy engagement for a full-service digital agency, running stakeholder sessions to diagnose bottlenecks and build a prioritised automation roadmap.</li></ul></div>
+          <div class="tl-desc" data-i18n-html="exp.item1.desc"><p>AI and software development consultancy focused on marketing and business growth.</p><ul><li>Main point of contact for client leadership across a multi-industry portfolio (fitness, finance and marketing agencies), turning business goals into roadmaps.</li><li>Manage end-to-end delivery of AI, marketing and CRM projects, from diagnosis and stakeholder sessions to launch and continuous improvement.</li><li>Advise clients on emerging AI and martech opportunities, from generative AI content and GEO to marketing automation.</li></ul></div>
         </div>
         <div class="tl-item">
           <div class="tl-date" data-i18n="exp.item2.date">Sep 2023 - Jun 2026</div>
@@ -912,48 +954,46 @@
         </div>
       </div>
 
-      <div class="cert-grid">
-        <div>
-          <p class="label-small" data-i18n="exp.cert_title">Certifications</p>
-          <div class="tags">
-            <span class="tag" data-i18n="exp.cert1">Scrum Fundamentals</span>
-            <span class="tag" data-i18n="exp.cert2">PM² Project Management Methodology (European Commission)</span>
-            <span class="tag" data-i18n="exp.cert3">PMP (35+ PDUs)</span>
-            <span class="tag" data-i18n="exp.cert4">Agile Fundamentals</span>
-            <span class="tag" data-i18n="exp.cert5">Design Thinking</span>
-          </div>
+      <div class="bento">
+        <div class="bento-card bento-certs">
+          <p class="bento-eyebrow" data-i18n="exp.cert_title">Certifications &amp; training</p>
+          <ul class="bento-list">
+            <li data-i18n="exp.cert1">Scrum Fundamentals</li>
+            <li data-i18n="exp.cert2">PM² Project Management Methodology (European Commission)</li>
+            <li data-i18n="exp.cert3">PMP (35+ PDUs)</li>
+            <li data-i18n="exp.cert4">Agile Fundamentals</li>
+            <li data-i18n="exp.cert5">Design Thinking</li>
+          </ul>
         </div>
-        <div>
-          <p class="label-small" data-i18n="exp.lang_title">Languages</p>
-          <div class="tags">
-            <span class="tag" data-i18n="exp.lang1">Portuguese (Native)</span>
-            <span class="tag" data-i18n="exp.lang2">English (Fluent, C2)</span>
-            <span class="tag" data-i18n="exp.lang3">French (Intermediate, B1)</span>
-          </div>
+        <div class="bento-card bento-langs">
+          <p class="bento-eyebrow" data-i18n="exp.lang_title">Languages</p>
+          <ul class="lang-list">
+            <li><span class="lang-code">PT</span><span data-i18n="exp.lang1">Portuguese (Native)</span></li>
+            <li><span class="lang-code">EN</span><span data-i18n="exp.lang2">English (Fluent, C2)</span></li>
+            <li><span class="lang-code">FR</span><span data-i18n="exp.lang3">French (Intermediate, B1)</span></li>
+          </ul>
         </div>
       </div>
 
-      <div class="tools">
-        <p class="label-small" data-i18n="exp.tools_title">Tools</p>
-        <div class="tools-grid">
-          <div class="tools-group">
-            <p class="tools-label" data-i18n="exp.tools_g1">Content creation</p>
-            <div class="tags">
-              <span class="tag">Adobe Photoshop</span><span class="tag">Illustrator</span><span class="tag">Premiere</span><span class="tag">Canva</span><span class="tag">CapCut</span><span class="tag" data-i18n="exp.tools_genai">Generative AI tools</span>
-            </div>
-          </div>
-          <div class="tools-group">
-            <p class="tools-label" data-i18n="exp.tools_g2">Planning &amp; management</p>
-            <div class="tags">
-              <span class="tag">Asana</span><span class="tag">ClickUp</span><span class="tag">Trello</span><span class="tag">Notion</span><span class="tag">Jira</span><span class="tag">Confluence</span>
-            </div>
-          </div>
-          <div class="tools-group">
-            <p class="tools-label" data-i18n="exp.tools_g3">Digital &amp; marketing</p>
-            <div class="tags">
-              <span class="tag">Meta Ads Manager</span><span class="tag">TikTok Ads Manager</span><span class="tag">GEO</span><span class="tag">CRM (GoHighLevel, Zoho, Pipedrive, Salesforce)</span><span class="tag">n8n</span><span class="tag">Claude Code</span>
-            </div>
-          </div>
+      <p class="label-small bento-head" data-i18n="exp.tools_title">Tools</p>
+      <div class="bento bento-tools">
+        <div class="bento-card tool-card tool-yellow">
+          <div class="tool-top"><span class="tool-num">01</span><svg class="tool-icon" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="7" width="24" height="18" rx="2"/><path d="M13.5 12v8l7-4z"/></svg></div>
+          <h3 class="tool-title" data-i18n="exp.tools_g1">Content creation</h3>
+          <p class="tool-desc" data-i18n="exp.tools_d1">Visuals, video and carousels for social media and campaigns.</p>
+          <div class="tags"><span class="tag">Adobe Photoshop</span><span class="tag">Illustrator</span><span class="tag">Premiere</span><span class="tag">Canva</span><span class="tag">CapCut</span><span class="tag" data-i18n="exp.tools_genai">Generative AI tools</span></div>
+        </div>
+        <div class="bento-card tool-card">
+          <div class="tool-top"><span class="tool-num">02</span><svg class="tool-icon" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="5" width="6.5" height="22" rx="1.5"/><rect x="12.75" y="5" width="6.5" height="15" rx="1.5"/><rect x="21.5" y="5" width="6.5" height="9" rx="1.5"/></svg></div>
+          <h3 class="tool-title" data-i18n="exp.tools_g2">Planning &amp; management</h3>
+          <p class="tool-desc" data-i18n="exp.tools_d2">Roadmaps, sprints and client projects, all in one place.</p>
+          <div class="tags"><span class="tag">Asana</span><span class="tag">ClickUp</span><span class="tag">Trello</span><span class="tag">Notion</span><span class="tag">Jira</span><span class="tag">Confluence</span></div>
+        </div>
+        <div class="bento-card tool-card tool-ink">
+          <div class="tool-top"><span class="tool-num">03</span><svg class="tool-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 24l8-8 5 5 11-11"/><path d="M20 10h8v8"/></svg></div>
+          <h3 class="tool-title" data-i18n="exp.tools_g3">Digital &amp; marketing</h3>
+          <p class="tool-desc" data-i18n="exp.tools_d3">Paid social, CRM pipelines and AI automation.</p>
+          <div class="tags"><span class="tag">Meta Ads Manager</span><span class="tag">TikTok Ads Manager</span><span class="tag">GEO</span><span class="tag">CRM: GoHighLevel, Zoho, Pipedrive, Salesforce</span><span class="tag">n8n</span><span class="tag">Claude Code</span></div>
         </div>
       </div>
 
@@ -1150,7 +1190,10 @@ const translations = {
       card3:{tag:"Client Project",title:"Customer Experience Digitalisation: Hospitality Group",desc:"Designed the end-to-end guest experience (personas, segmentation and competitive benchmarking) and contributed to predictive models that helped achieve 87.8% guest satisfaction."},
       card4:{tag:"Client Project",title:"Stakeholder Management Strategy",desc:"Mapped stakeholders' engagement objectives, priorities and preferred platforms, then built an action plan identifying risks and opportunities. It strengthened institutional relationships and supported long-term account development."},
       card5:{tag:"Client Project",title:"Loyalty Programme: Icelandic Retail Group",desc:"Delivered data analysis and strategic synthesis for the executive team, shaping recommendations for a new loyalty programme."},
-      card6:{tag:"Client Project",title:"GEO, CRM & AI Marketing Automation",desc:"Implemented GEO (Generative Engine Optimisation) strategies and AI-driven automations for social content, website updates and campaign execution, and structured CRM systems with end-to-end lead research and pipeline analysis."}
+      card6:{tag:"Client Project",title:"GEO, CRM & AI Marketing Automation",desc:"Implemented GEO (Generative Engine Optimisation) strategies and AI-driven automations for social content, website updates and campaign execution, and structured CRM systems with end-to-end lead research and pipeline analysis."},
+      card7:{tag:"Client Project",title:"Acquisition & Retention Platform: Gym Chain",desc:"Built an acquisition and retention platform integrating Meta Lead Ads, Zoho CRM and MVF software, with a retention risk model that flagged 655 at-risk members. Delivered in 3 months across 371 releases."},
+      card8:{tag:"Client Project",title:"AI Marketing & Lead-Generation Platform",desc:"Delivered in 2 months an AI-powered platform managing content across 9 channels, turning YouTube live sessions into ready-to-publish carousels and recovering 251 archived content assets."},
+      card9:{tag:"Client Project",title:"AI Strategy: Full-Service Digital Agency",desc:"Co-led an AI strategy engagement, running stakeholder sessions to diagnose bottlenecks and build a prioritised automation roadmap."}
     },
     li:{
       eyebrow:"Writing",
@@ -1170,7 +1213,7 @@ const translations = {
       title:"Experience & Education",
       intro:"A summary of my academic and professional journey.",
       subheading_exp:"Experience",
-      item1:{date:"Jun 2026 - Present",role:"Project Manager",org:"NILG.AI",desc:"<p>AI and software development consultancy focused on marketing and business growth.</p><ul><li>Primary contact for client leadership across a multi-industry portfolio, including fitness, finance and marketing agencies, turning business goals into roadmaps and advising on emerging AI and martech opportunities.</li><li>Built an acquisition and retention platform for a gym chain integrating Meta Lead Ads, Zoho CRM and MVF software, with a retention risk model that flagged 655 at-risk members; delivered in 3 months across 371 releases.</li><li>Delivered in 2 months an AI-powered marketing and lead-generation platform managing content across 9 channels, turning YouTube live sessions into ready-to-publish carousels and recovering 251 archived content assets.</li><li>Co-led an AI strategy engagement for a full-service digital agency, running stakeholder sessions to diagnose bottlenecks and build a prioritised automation roadmap.</li></ul>"},
+      item1:{date:"Jun 2026 - Present",role:"Project Manager",org:"NILG.AI",desc:"<p>AI and software development consultancy focused on marketing and business growth.</p><ul><li>Main point of contact for client leadership across a multi-industry portfolio (fitness, finance and marketing agencies), turning business goals into roadmaps.</li><li>Manage end-to-end delivery of AI, marketing and CRM projects, from diagnosis and stakeholder sessions to launch and continuous improvement.</li><li>Advise clients on emerging AI and martech opportunities, from generative AI content and GEO to marketing automation.</li></ul>"},
       item2:{date:"Sep 2023 - Jun 2026",role:"Marketing and Strategy Consultant",org:"Deloitte Business Consulting",desc:"Led data-driven marketing initiatives, built executive dashboards for weekly product and marketing decisions, and ran VoC and behavioural analysis across channels."},
       item3:{date:"Sep 2022 - Aug 2023",role:"Marketing Analyst",org:"Deloitte Business Consulting",desc:"Analysed customer, market and competitor data, developed reporting frameworks and supported digital performance analysis across websites, portals and social channels."},
       item4:{date:"Jul - Oct 2021",role:"Economic Analysis Intern",org:"Banco de Portugal",desc:"Supported economic and financial analyses through data collection, validation and interpretation, ensuring methodological rigour in reporting."},
@@ -1180,7 +1223,7 @@ const translations = {
       edu2:{date:"2020 - 2022",role:"Master's Degree in Business",org:"School of Economics, University of Porto"},
       edu3:{date:"2017 - 2020",role:"Bachelor's Degree in Economics",org:"School of Economics, UTAD"},
       cert_title:"Certifications & training",
-      tools_title:"Tools",tools_g1:"Content creation",tools_g2:"Planning & management",tools_g3:"Digital & marketing",tools_genai:"Generative AI tools",
+      tools_title:"Tools",tools_g1:"Content creation",tools_g2:"Planning & management",tools_g3:"Digital & marketing",tools_genai:"Generative AI tools",tools_d1:"Visuals, video and carousels for social media and campaigns.",tools_d2:"Roadmaps, sprints and client projects, all in one place.",tools_d3:"Paid social, CRM pipelines and AI automation.",
       cert1:"Scrum Fundamentals",
       cert2:"PM² Project Management Methodology (European Commission)",
       cert3:"PMP (35+ PDUs)",
@@ -1244,7 +1287,10 @@ const translations = {
       card3:{tag:"Projeto Cliente",title:"Digitalização da Experiência do Cliente: Grupo Hoteleiro",desc:"Desenhei a experiência completa do hóspede (personas, segmentação e benchmarking competitivo) e contribuí para modelos preditivos que ajudaram a atingir 87,8% de satisfação dos hóspedes."},
       card4:{tag:"Projeto Cliente",title:"Estratégia de Gestão de Stakeholders",desc:"Mapeei os objetivos de envolvimento, as prioridades e as plataformas preferidas dos stakeholders e construí um plano de ação que identificou riscos e oportunidades. Reforçou as relações institucionais e apoiou o desenvolvimento da conta a longo prazo."},
       card5:{tag:"Projeto Cliente",title:"Programa de Fidelização: Grupo Retalhista Islandês",desc:"Realizei a análise de dados e a síntese estratégica para a equipa executiva, moldando as recomendações para um novo programa de fidelização."},
-      card6:{tag:"Projeto Cliente",title:"GEO, CRM e Automação de Marketing com IA",desc:"Implementei estratégias de GEO (Generative Engine Optimisation) e automações com IA para conteúdos sociais, atualizações de website e execução de campanhas, e estruturei sistemas de CRM com pesquisa e inserção de leads e análise de pipeline."}
+      card6:{tag:"Projeto Cliente",title:"GEO, CRM e Automação de Marketing com IA",desc:"Implementei estratégias de GEO (Generative Engine Optimisation) e automações com IA para conteúdos sociais, atualizações de website e execução de campanhas, e estruturei sistemas de CRM com pesquisa e inserção de leads e análise de pipeline."},
+      card7:{tag:"Projeto Cliente",title:"Plataforma de Aquisição e Retenção: Cadeia de Ginásios",desc:"Construí uma plataforma de aquisição e retenção que integra Meta Lead Ads, Zoho CRM e o software MVF, com um modelo de risco de retenção que sinalizou 655 sócios em risco. Entregue em 3 meses, ao longo de 371 releases."},
+      card8:{tag:"Projeto Cliente",title:"Plataforma de Marketing e Geração de Leads com IA",desc:"Entreguei em 2 meses uma plataforma com IA que gere conteúdos em 9 canais, transforma sessões em direto no YouTube em carrosséis prontos a publicar e recuperou 251 conteúdos arquivados."},
+      card9:{tag:"Projeto Cliente",title:"Estratégia de IA: Agência Digital Full-Service",desc:"Co-liderei um projeto de estratégia de IA, com sessões com stakeholders para diagnosticar bloqueios e construir um roadmap de automação priorizado."}
     },
     li:{
       eyebrow:"Escrita",
@@ -1264,7 +1310,7 @@ const translations = {
       title:"Experiência & Formação",
       intro:"Um resumo do meu percurso académico e profissional.",
       subheading_exp:"Experiência",
-      item1:{date:"Jun 2026 - Presente",role:"Project Manager",org:"NILG.AI",desc:"<p>Consultora de IA e desenvolvimento de software focada em marketing e crescimento de negócio.</p><ul><li>Principal ponto de contacto da liderança dos clientes num portefólio multissetorial, incluindo fitness, finanças e agências de marketing, transformando objetivos de negócio em roadmaps e aconselhando sobre novas oportunidades de IA e martech.</li><li>Construí uma plataforma de aquisição e retenção para uma cadeia de ginásios, integrando Meta Lead Ads, Zoho CRM e o software MVF, com um modelo de risco de retenção que sinalizou 655 sócios em risco; entregue em 3 meses, ao longo de 371 releases.</li><li>Entreguei em 2 meses uma plataforma de marketing e geração de leads com IA que gere conteúdos em 9 canais, transforma sessões em direto no YouTube em carrosséis prontos a publicar e recuperou 251 conteúdos arquivados.</li><li>Co-liderei um projeto de estratégia de IA para uma agência digital full-service, conduzindo sessões com stakeholders para diagnosticar bloqueios e construir um roadmap de automação priorizado.</li></ul>"},
+      item1:{date:"Jun 2026 - Presente",role:"Project Manager",org:"NILG.AI",desc:"<p>Consultora de IA e desenvolvimento de software focada em marketing e crescimento de negócio.</p><ul><li>Principal ponto de contacto da liderança dos clientes num portefólio multissetorial (fitness, finanças e agências de marketing), transformando objetivos de negócio em roadmaps.</li><li>Gestão da entrega de ponta a ponta de projetos de IA, marketing e CRM, desde o diagnóstico e as sessões com stakeholders até ao lançamento e à melhoria contínua.</li><li>Aconselhamento sobre novas oportunidades de IA e martech, da criação de conteúdos com IA generativa e GEO à automação de marketing.</li></ul>"},
       item2:{date:"Set 2023 - Jun 2026",role:"Consultora de Marketing e Estratégia",org:"Deloitte Business Consulting",desc:"Liderança de iniciativas de marketing orientadas por dados, criação de dashboards executivos para decisões semanais de produto e marketing, e análise de VoC e comportamental entre canais."},
       item3:{date:"Set 2022 - Ago 2023",role:"Analista de Marketing",org:"Deloitte Business Consulting",desc:"Análise de dados de clientes, mercado e concorrência, desenvolvimento de frameworks de reporting e apoio à análise de performance digital em websites, portais e redes sociais."},
       item4:{date:"Jul - Out 2021",role:"Estagiária de Análise Económica",org:"Banco de Portugal",desc:"Apoio a análises económicas e financeiras através de recolha, validação e interpretação de dados, garantindo rigor metodológico no reporting."},
@@ -1274,7 +1320,7 @@ const translations = {
       edu2:{date:"2020 - 2022",role:"Mestrado em Gestão",org:"Faculdade de Economia, Universidade do Porto"},
       edu3:{date:"2017 - 2020",role:"Licenciatura em Economia",org:"Faculdade de Economia, UTAD"},
       cert_title:"Certificações e formação",
-      tools_title:"Ferramentas",tools_g1:"Criação de conteúdo",tools_g2:"Planeamento e gestão",tools_g3:"Digital e marketing",tools_genai:"Ferramentas de IA generativa",
+      tools_title:"Ferramentas",tools_g1:"Criação de conteúdo",tools_g2:"Planeamento e gestão",tools_g3:"Digital e marketing",tools_genai:"Ferramentas de IA generativa",tools_d1:"Visuais, vídeo e carrosséis para redes sociais e campanhas.",tools_d2:"Roadmaps, sprints e projetos de clientes, tudo organizado.",tools_d3:"Publicidade nas redes, pipelines de CRM e automação com IA.",
       cert1:"Scrum Fundamentals",
       cert2:"PM² Metodologia de Gestão de Projetos (Comissão Europeia)",
       cert3:"PMP (35+ PDUs)",
@@ -1338,7 +1384,10 @@ const translations = {
       card3:{tag:"Projet Client",title:"Digitalisation de l'expérience client : groupe hôtelier",desc:"J'ai conçu l'expérience complète du client (personas, segmentation et benchmark concurrentiel) et contribué à des modèles prédictifs qui ont aidé à atteindre 87,8 % de satisfaction."},
       card4:{tag:"Projet Client",title:"Stratégie de gestion des parties prenantes",desc:"J'ai cartographié les objectifs d'engagement, les priorités et les plateformes préférées des parties prenantes, puis construit un plan d'action identifiant risques et opportunités. Il a renforcé les relations institutionnelles et soutenu le développement du compte à long terme."},
       card5:{tag:"Projet Client",title:"Programme de Fidélité : Groupe de Distribution Islandais",desc:"J'ai réalisé l'analyse de données et la synthèse stratégique pour l'équipe exécutive, orientant les recommandations pour un nouveau programme de fidélité."},
-      card6:{tag:"Projet Client",title:"GEO, CRM et automatisation marketing par l'IA",desc:"J'ai mis en place des stratégies GEO (Generative Engine Optimisation) et des automatisations par IA pour les contenus sociaux, les mises à jour de site et l'exécution de campagnes, et structuré des systèmes CRM avec recherche et insertion de leads et analyse du pipeline."}
+      card6:{tag:"Projet Client",title:"GEO, CRM et automatisation marketing par l'IA",desc:"J'ai mis en place des stratégies GEO (Generative Engine Optimisation) et des automatisations par IA pour les contenus sociaux, les mises à jour de site et l'exécution de campagnes, et structuré des systèmes CRM avec recherche et insertion de leads et analyse du pipeline."},
+      card7:{tag:"Projet Client",title:"Plateforme d'acquisition et de fidélisation : chaîne de salles de sport",desc:"Conception d'une plateforme d'acquisition et de fidélisation intégrant Meta Lead Ads, Zoho CRM et le logiciel MVF, avec un modèle de risque d'attrition qui a identifié 655 membres à risque. Livrée en 3 mois en 371 releases."},
+      card8:{tag:"Projet Client",title:"Plateforme marketing et génération de leads par l'IA",desc:"Livraison en 2 mois d'une plateforme pilotée par l'IA gérant les contenus sur 9 canaux, transformant les lives YouTube en carrousels prêts à publier et récupérant 251 contenus archivés."},
+      card9:{tag:"Projet Client",title:"Stratégie IA : agence digitale full-service",desc:"Co-pilotage d'une mission de stratégie IA, avec l'animation d'ateliers avec les parties prenantes pour diagnostiquer les blocages et construire une feuille de route d'automatisation priorisée."}
     },
     li:{
       eyebrow:"Écriture",
@@ -1358,7 +1407,7 @@ const translations = {
       title:"Expérience & Formation",
       intro:"Un résumé de mon parcours académique et professionnel.",
       subheading_exp:"Expérience",
-      item1:{date:"Juin 2026 - Présent",role:"Project Manager",org:"NILG.AI",desc:"<p>Cabinet de conseil en IA et en développement logiciel axé sur le marketing et la croissance des entreprises.</p><ul><li>Interlocutrice principale des directions clientes sur un portefeuille multisectoriel, incluant le fitness, la finance et des agences marketing, traduisant les objectifs business en feuilles de route et conseillant sur les opportunités émergentes en IA et martech.</li><li>Conception d'une plateforme d'acquisition et de fidélisation pour une chaîne de salles de sport intégrant Meta Lead Ads, Zoho CRM et le logiciel MVF, avec un modèle de risque d'attrition qui a identifié 655 membres à risque, livrée en 3 mois en 371 releases.</li><li>Livraison en 2 mois d'une plateforme de marketing et de génération de leads pilotée par l'IA, gérant les contenus sur 9 canaux, transformant les lives YouTube en carrousels prêts à publier et récupérant 251 contenus archivés.</li><li>Co-pilotage d'une mission de stratégie IA pour une agence digitale full-service, avec l'animation d'ateliers avec les parties prenantes pour diagnostiquer les blocages et construire une feuille de route d'automatisation priorisée.</li></ul>"},
+      item1:{date:"Juin 2026 - Présent",role:"Project Manager",org:"NILG.AI",desc:"<p>Cabinet de conseil en IA et en développement logiciel axé sur le marketing et la croissance des entreprises.</p><ul><li>Interlocutrice principale des directions clientes sur un portefeuille multisectoriel (fitness, finance et agences marketing), traduisant les objectifs business en feuilles de route.</li><li>Pilotage de bout en bout de projets IA, marketing et CRM, du diagnostic et des ateliers avec les parties prenantes jusqu'au lancement et à l'amélioration continue.</li><li>Conseil sur les opportunités émergentes en IA et martech, de la création de contenus par IA générative et du GEO à l'automatisation marketing.</li></ul>"},
       item2:{date:"Sept 2023 - Juin 2026",role:"Consultante Marketing et Stratégie",org:"Deloitte Business Consulting",desc:"Pilotage d'initiatives marketing fondées sur les données, création de tableaux de bord exécutifs pour les décisions hebdomadaires de produit et de marketing, et analyses VoC et comportementales multicanal."},
       item3:{date:"Sept 2022 - Août 2023",role:"Analyste Marketing",org:"Deloitte Business Consulting",desc:"Analyse des données clients, de marché et concurrentielles, développement de cadres de reporting et soutien à l'analyse de performance digitale sur sites web, portails et réseaux sociaux."},
       item4:{date:"Juil - Oct 2021",role:"Stagiaire en Analyse Économique",org:"Banco de Portugal",desc:"Soutien aux analyses économiques et financières via la collecte, la validation et l'interprétation des données, garantissant la rigueur méthodologique du reporting."},
@@ -1368,7 +1417,7 @@ const translations = {
       edu2:{date:"2020 - 2022",role:"Master en Gestion",org:"École d'Économie, Université de Porto"},
       edu3:{date:"2017 - 2020",role:"Licence en Économie",org:"École d'Économie, UTAD"},
       cert_title:"Certifications et formations",
-      tools_title:"Outils",tools_g1:"Création de contenu",tools_g2:"Planification et gestion",tools_g3:"Digital et marketing",tools_genai:"Outils d'IA générative",
+      tools_title:"Outils",tools_g1:"Création de contenu",tools_g2:"Planification et gestion",tools_g3:"Digital et marketing",tools_genai:"Outils d'IA générative",tools_d1:"Visuels, vidéos et carrousels pour les réseaux sociaux et les campagnes.",tools_d2:"Feuilles de route, sprints et projets clients, bien organisés.",tools_d3:"Publicité sociale, pipelines CRM et automatisation par l'IA.",
       cert1:"Scrum Fundamentals",
       cert2:"PM² Méthodologie de gestion de projet (Commission européenne)",
       cert3:"PMP (35+ PDUs)",
@@ -1432,7 +1481,10 @@ const translations = {
       card3:{tag:"Proyecto Cliente",title:"Digitalización de la experiencia del cliente: grupo hotelero",desc:"Diseñé la experiencia completa del huésped (personas, segmentación y benchmarking competitivo) y contribuí a modelos predictivos que ayudaron a alcanzar un 87,8 % de satisfacción."},
       card4:{tag:"Proyecto Cliente",title:"Estrategia de gestión de stakeholders",desc:"Mapeé los objetivos de implicación, las prioridades y las plataformas preferidas de los stakeholders y construí un plan de acción que identificó riesgos y oportunidades. Reforzó las relaciones institucionales y apoyó el desarrollo de la cuenta a largo plazo."},
       card5:{tag:"Proyecto Cliente",title:"Programa de Fidelización: Grupo Minorista Islandés",desc:"Realicé el análisis de datos y la síntesis estratégica para el equipo ejecutivo, dando forma a las recomendaciones para un nuevo programa de fidelización."},
-      card6:{tag:"Proyecto Cliente",title:"GEO, CRM y automatización de marketing con IA",desc:"Implementé estrategias de GEO (Generative Engine Optimisation) y automatizaciones con IA para contenidos sociales, actualizaciones web y ejecución de campañas, y estructuré sistemas de CRM con investigación e inserción de leads y análisis del pipeline."}
+      card6:{tag:"Proyecto Cliente",title:"GEO, CRM y automatización de marketing con IA",desc:"Implementé estrategias de GEO (Generative Engine Optimisation) y automatizaciones con IA para contenidos sociales, actualizaciones web y ejecución de campañas, y estructuré sistemas de CRM con investigación e inserción de leads y análisis del pipeline."},
+      card7:{tag:"Proyecto Cliente",title:"Plataforma de captación y retención: cadena de gimnasios",desc:"Construí una plataforma de captación y retención que integra Meta Lead Ads, Zoho CRM y el software MVF, con un modelo de riesgo de retención que identificó 655 socios en riesgo. Entregada en 3 meses a lo largo de 371 releases."},
+      card8:{tag:"Proyecto Cliente",title:"Plataforma de marketing y generación de leads con IA",desc:"Entregué en 2 meses una plataforma con IA que gestiona contenidos en 9 canales, convierte sesiones en directo de YouTube en carruseles listos para publicar y recuperó 251 contenidos archivados."},
+      card9:{tag:"Proyecto Cliente",title:"Estrategia de IA: agencia digital full-service",desc:"Codirigí un proyecto de estrategia de IA, dirigiendo sesiones con stakeholders para diagnosticar cuellos de botella y construir una hoja de ruta de automatización priorizada."}
     },
     li:{
       eyebrow:"Escritura",
@@ -1452,7 +1504,7 @@ const translations = {
       title:"Experiencia y Formación",
       intro:"Un resumen de mi trayectoria académica y profesional.",
       subheading_exp:"Experiencia",
-      item1:{date:"Jun 2026 - Presente",role:"Project Manager",org:"NILG.AI",desc:"<p>Consultora de IA y desarrollo de software centrada en el marketing y el crecimiento empresarial.</p><ul><li>Principal punto de contacto de la dirección de los clientes en una cartera multisectorial, que incluye fitness, finanzas y agencias de marketing, convirtiendo objetivos de negocio en roadmaps y asesorando sobre nuevas oportunidades de IA y martech.</li><li>Construí una plataforma de captación y retención para una cadena de gimnasios que integra Meta Lead Ads, Zoho CRM y el software MVF, con un modelo de riesgo de retención que identificó 655 socios en riesgo; entregada en 3 meses a lo largo de 371 releases.</li><li>Entregué en 2 meses una plataforma de marketing y generación de leads con IA que gestiona contenidos en 9 canales, convierte sesiones en directo de YouTube en carruseles listos para publicar y recuperó 251 contenidos archivados.</li><li>Codirigí un proyecto de estrategia de IA para una agencia digital full-service, dirigiendo sesiones con stakeholders para diagnosticar cuellos de botella y construir una hoja de ruta de automatización priorizada.</li></ul>"},
+      item1:{date:"Jun 2026 - Presente",role:"Project Manager",org:"NILG.AI",desc:"<p>Consultora de IA y desarrollo de software centrada en el marketing y el crecimiento empresarial.</p><ul><li>Principal punto de contacto de la dirección de los clientes en una cartera multisectorial (fitness, finanzas y agencias de marketing), convirtiendo objetivos de negocio en roadmaps.</li><li>Gestión de extremo a extremo de proyectos de IA, marketing y CRM, desde el diagnóstico y las sesiones con stakeholders hasta el lanzamiento y la mejora continua.</li><li>Asesoramiento sobre nuevas oportunidades de IA y martech, desde la creación de contenidos con IA generativa y el GEO hasta la automatización del marketing.</li></ul>"},
       item2:{date:"Sep 2023 - Jun 2026",role:"Consultora de Marketing y Estrategia",org:"Deloitte Business Consulting",desc:"Liderazgo de iniciativas de marketing basadas en datos, creación de dashboards ejecutivos para decisiones semanales de producto y marketing, y análisis VoC y de comportamiento en distintos canales."},
       item3:{date:"Sep 2022 - Ago 2023",role:"Analista de Marketing",org:"Deloitte Business Consulting",desc:"Análisis de datos de clientes, mercado y competencia, desarrollo de marcos de reporting y apoyo al análisis de rendimiento digital en sitios web, portales y redes sociales."},
       item4:{date:"Jul - Oct 2021",role:"Becaria de Análisis Económico",org:"Banco de Portugal",desc:"Apoyo a análisis económicos y financieros mediante la recopilación, validación e interpretación de datos, garantizando el rigor metodológico en los informes."},
@@ -1462,7 +1514,7 @@ const translations = {
       edu2:{date:"2020 - 2022",role:"Máster en Empresariales",org:"Facultad de Economía, Universidad de Oporto"},
       edu3:{date:"2017 - 2020",role:"Grado en Economía",org:"Facultad de Economía, UTAD"},
       cert_title:"Certificaciones y formación",
-      tools_title:"Herramientas",tools_g1:"Creación de contenido",tools_g2:"Planificación y gestión",tools_g3:"Digital y marketing",tools_genai:"Herramientas de IA generativa",
+      tools_title:"Herramientas",tools_g1:"Creación de contenido",tools_g2:"Planificación y gestión",tools_g3:"Digital y marketing",tools_genai:"Herramientas de IA generativa",tools_d1:"Visuales, vídeo y carruseles para redes sociales y campañas.",tools_d2:"Roadmaps, sprints y proyectos de clientes, todo organizado.",tools_d3:"Publicidad en redes, pipelines de CRM y automatización con IA.",
       cert1:"Scrum Fundamentals",
       cert2:"PM² Metodología de gestión de proyectos (Comisión Europea)",
       cert3:"PMP (35+ PDUs)",
@@ -1614,9 +1666,9 @@ function applyLanguage(lang){
 
 /* ===== portfolio order: relevance for the context, switchable with ?foco= ===== */
 const PROJECT_ORDER = {
-  sports:     ['milan','cx','loyalty','web','stake','geo'],
-  ai:         ['geo','milan','cx','loyalty','web','stake'],
-  consulting: ['stake','cx','loyalty','web','milan','geo']
+  sports:     ['milan','gym','cx','loyalty','aiplat','web','stake','agency','geo'],
+  ai:         ['aiplat','agency','geo','gym','milan','cx','loyalty','web','stake'],
+  consulting: ['agency','stake','cx','loyalty','web','gym','aiplat','milan','geo']
 };
 const FOCUS_ALIAS = {desporto:'sports', sports:'sports', ia:'ai', ai:'ai', consultoria:'consulting', consulting:'consulting'};
 function applyProjectOrder(){
@@ -1897,7 +1949,7 @@ document.addEventListener('keydown', function(e){
 /* scroll reveal */
 (function(){
   if(!('IntersectionObserver' in window)) return;
-  var els = document.querySelectorAll('.section-title, .section-intro, .about .about-grid > *, .about-skills-row, .card, .li-tile, .li-more, .tl-item, .banner-quote, .contact-top > *, .contact-item, .contact-form, .cert-grid > *');
+  var els = document.querySelectorAll('.section-title, .section-intro, .about .about-grid > *, .about-skills-row, .card, .li-tile, .li-more, .tl-item, .banner-quote, .contact-top > *, .contact-item, .contact-form, .bento-card, .bento-head');
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
