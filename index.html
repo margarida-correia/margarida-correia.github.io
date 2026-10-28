@@ -468,6 +468,14 @@
   .tl-date{font:800 11.5px var(--sans);color:var(--orange-ink);text-transform:uppercase;letter-spacing:.16em;}
   .tl-item h3{font:500 22px/1.25 var(--serif);margin:8px 0 8px;letter-spacing:-.01em;}
   .tl-item p{color:var(--ink-soft);font-size:15.5px;max-width:640px;}
+  .tl-desc{color:var(--ink-soft);font-size:15.5px;max-width:640px;}
+  .tl-desc ul{list-style:none;margin-top:12px;display:flex;flex-direction:column;gap:9px;}
+  .tl-desc li{position:relative;padding-left:18px;}
+  .tl-desc li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:1.5px;background:var(--orange);}
+  /* tools: chips grouped by area */
+  .tools{margin-top:56px;}
+  .tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
+  .tools-label{font:700 11px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:12px;}
   .org-link{border-bottom:1.5px solid var(--orange);transition:color .15s;}
   .org-link:hover{color:var(--orange-ink);}
   .cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;}
@@ -575,6 +583,7 @@
     .grid-3{grid-template-columns:1fr;}
     .li-grid{grid-template-columns:repeat(2,1fr);gap:22px 14px;}
     .cert-grid{grid-template-columns:1fr;gap:40px;}
+    .tools-grid{grid-template-columns:1fr;gap:32px;}
     .contact-top{grid-template-columns:1fr;gap:56px;margin-bottom:56px;}
     .contact-photo{max-width:300px;margin-left:16px;}
     .contact-grid{grid-template-columns:1fr;gap:48px;}
@@ -797,49 +806,49 @@
       <div class="li-grid" id="liGrid">
         <button type="button" class="li-tile" data-post="p8" data-url="https://www.linkedin.com/feed/update/urn:li:activity:7431767305623072768/">
           <span class="li-thumb-wrap">
-            <img class="li-thumb" alt="" loading="lazy" decoding="async"><span class="li-soon"><span class="li-soon-tag" data-i18n="li.soon">Coming soon</span><span class="li-soon-title" data-i18n="li.post8.title"></span></span>
+            <img class="li-thumb" alt="" loading="lazy" decoding="async">
             <span class="li-hover"><span class="li-hover-text" data-i18n="li.hover8"></span><span class="li-hover-cta" data-i18n="li.read">Read the post &#8594;</span></span>
           </span>
           <span class="li-tile-meta"><span data-i18n="li.post8.tag"></span><span class="li-dot"></span><span data-i18n="li.post8.date"></span></span>
         </button>
         <button type="button" class="li-tile" data-post="p7" data-url="https://www.linkedin.com/feed/update/urn:li:activity:7435675124877463552/">
           <span class="li-thumb-wrap">
-            <img class="li-thumb" alt="" loading="lazy" decoding="async"><span class="li-soon"><span class="li-soon-tag" data-i18n="li.soon">Coming soon</span><span class="li-soon-title" data-i18n="li.post7.title"></span></span>
+            <img class="li-thumb" alt="" loading="lazy" decoding="async">
             <span class="li-hover"><span class="li-hover-text" data-i18n="li.hover7"></span><span class="li-hover-cta" data-i18n="li.read">Read the post &#8594;</span></span>
           </span>
           <span class="li-tile-meta"><span data-i18n="li.post7.tag"></span><span class="li-dot"></span><span data-i18n="li.post7.date"></span></span>
         </button>
         <button type="button" class="li-tile" data-post="p6" data-url="https://www.linkedin.com/feed/update/urn:li:activity:7439294926904836096/">
           <span class="li-thumb-wrap">
-            <img class="li-thumb" alt="" loading="lazy" decoding="async"><span class="li-soon"><span class="li-soon-tag" data-i18n="li.soon">Coming soon</span><span class="li-soon-title" data-i18n="li.post6.title"></span></span>
+            <img class="li-thumb" alt="" loading="lazy" decoding="async">
             <span class="li-hover"><span class="li-hover-text" data-i18n="li.hover6"></span><span class="li-hover-cta" data-i18n="li.read">Read the post &#8594;</span></span>
           </span>
           <span class="li-tile-meta"><span data-i18n="li.post6.tag"></span><span class="li-dot"></span><span data-i18n="li.post6.date"></span></span>
         </button>
         <button type="button" class="li-tile" data-post="p2" data-url="https://www.linkedin.com/feed/update/urn:li:activity:7448053367844597761/">
           <span class="li-thumb-wrap">
-            <img class="li-thumb" alt="" loading="lazy" decoding="async"><span class="li-soon"><span class="li-soon-tag" data-i18n="li.soon">Coming soon</span><span class="li-soon-title" data-i18n="li.post2.title"></span></span>
+            <img class="li-thumb" alt="" loading="lazy" decoding="async">
             <span class="li-hover"><span class="li-hover-text" data-i18n="li.hover2"></span><span class="li-hover-cta" data-i18n="li.read">Read the post &#8594;</span></span>
           </span>
           <span class="li-tile-meta"><span data-i18n="li.post2.tag"></span><span class="li-dot"></span><span data-i18n="li.post2.date"></span></span>
         </button>
         <button type="button" class="li-tile" data-post="p1" data-url="https://www.linkedin.com/feed/update/urn:li:activity:7457474223377170433/">
           <span class="li-thumb-wrap">
-            <img class="li-thumb" alt="" loading="lazy" decoding="async"><span class="li-soon"><span class="li-soon-tag" data-i18n="li.soon">Coming soon</span><span class="li-soon-title" data-i18n="li.post1.title"></span></span>
+            <img class="li-thumb" alt="" loading="lazy" decoding="async">
             <span class="li-hover"><span class="li-hover-text" data-i18n="li.hover1"></span><span class="li-hover-cta" data-i18n="li.read">Read the post &#8594;</span></span>
           </span>
           <span class="li-tile-meta"><span data-i18n="li.post1.tag"></span><span class="li-dot"></span><span data-i18n="li.post1.date"></span></span>
         </button>
         <button type="button" class="li-tile" data-post="p4" data-url="https://www.linkedin.com/feed/update/urn:li:activity:7462911270329978880/">
           <span class="li-thumb-wrap">
-            <img class="li-thumb" alt="" loading="lazy" decoding="async"><span class="li-soon"><span class="li-soon-tag" data-i18n="li.soon">Coming soon</span><span class="li-soon-title" data-i18n="li.post4.title"></span></span>
+            <img class="li-thumb" alt="" loading="lazy" decoding="async">
             <span class="li-hover"><span class="li-hover-text" data-i18n="li.hover4"></span><span class="li-hover-cta" data-i18n="li.read">Read the post &#8594;</span></span>
           </span>
           <span class="li-tile-meta"><span data-i18n="li.post4.tag"></span><span class="li-dot"></span><span data-i18n="li.post4.date"></span></span>
         </button>
         <button type="button" class="li-tile" data-post="p3" data-url="https://www.linkedin.com/feed/update/urn:li:activity:7486042624882143232/">
           <span class="li-thumb-wrap">
-            <img class="li-thumb" alt="" loading="lazy" decoding="async"><span class="li-soon"><span class="li-soon-tag" data-i18n="li.soon">Coming soon</span><span class="li-soon-title" data-i18n="li.post3.title"></span></span>
+            <img class="li-thumb" alt="" loading="lazy" decoding="async">
             <span class="li-hover"><span class="li-hover-text" data-i18n="li.hover3"></span><span class="li-hover-cta" data-i18n="li.read">Read the post &#8594;</span></span>
           </span>
           <span class="li-tile-meta"><span data-i18n="li.post3.tag"></span><span class="li-dot"></span><span data-i18n="li.post3.date"></span></span>
@@ -863,8 +872,8 @@
       <div class="timeline">
         <div class="tl-item">
           <div class="tl-date" data-i18n="exp.item1.date">Jun 2026 - Present</div>
-          <h3><span data-i18n="exp.item1.role">Project Manager</span>, <a class="org-link" href="https://nilg.ai/" target="_blank" rel="noopener" data-i18n="exp.item1.org">nilg.ai</a></h3>
-          <p data-i18n="exp.item1.desc">Managing GEO (Generative Engine Optimisation) projects and social media communication strategies for client accounts, leading lead-generation research and implementation with CRM and AI automation tools, and coordinating end-to-end delivery of AI-marketing projects, from research to implementation.</p>
+          <h3><span data-i18n="exp.item1.role">Project Manager</span>, <a class="org-link" href="https://nilg.ai/" target="_blank" rel="noopener" data-i18n="exp.item1.org">NILG.AI</a></h3>
+          <div class="tl-desc" data-i18n-html="exp.item1.desc"><p>AI and software development consultancy focused on marketing and business growth.</p><ul><li>Primary contact for client leadership across a multi-industry portfolio, including fitness, finance and marketing agencies, turning business goals into roadmaps and advising on emerging AI and martech opportunities.</li><li>Built an acquisition and retention platform for a gym chain integrating Meta Lead Ads, Zoho CRM and MVF software, with a retention risk model that flagged 655 at-risk members; delivered in 3 months across 371 releases.</li><li>Delivered in 2 months an AI-powered marketing and lead-generation platform managing content across 9 channels, turning YouTube live sessions into ready-to-publish carousels and recovering 251 archived content assets.</li><li>Co-led an AI strategy engagement for a full-service digital agency, running stakeholder sessions to diagnose bottlenecks and build a prioritised automation roadmap.</li></ul></div>
         </div>
         <div class="tl-item">
           <div class="tl-date" data-i18n="exp.item2.date">Sep 2023 - Jun 2026</div>
@@ -890,6 +899,10 @@
           <h3><span data-i18n="exp.edu1.role">Postgraduate in Sports Marketing &amp; Entertainment (APPM-certified)</span>, <a class="org-link" href="https://www.ipam.pt/" target="_blank" rel="noopener" data-i18n="exp.edu1.org">IPAM Marketing School</a></h3>
         </div>
         <div class="tl-item">
+          <div class="tl-date" data-i18n="exp.edu4.date">2026</div>
+          <h3><span data-i18n="exp.edu4.role">AI Social Media Professional Program (in progress, DGERT-certified)</span>, <a class="org-link" href="https://swonkie.com/" target="_blank" rel="noopener" data-i18n="exp.edu4.org">Swonkie</a></h3>
+        </div>
+        <div class="tl-item">
           <div class="tl-date" data-i18n="exp.edu2.date">2020 - 2022</div>
           <h3><span data-i18n="exp.edu2.role">Master's Degree in Business</span>, <a class="org-link" href="https://www.up.pt/fep/pt/" target="_blank" rel="noopener" data-i18n="exp.edu2.org">School of Economics, University of Porto</a></h3>
         </div>
@@ -905,10 +918,9 @@
           <div class="tags">
             <span class="tag" data-i18n="exp.cert1">Scrum Fundamentals</span>
             <span class="tag" data-i18n="exp.cert2">PM² Project Management Methodology (European Commission)</span>
-            <span class="tag" data-i18n="exp.cert3">PMP (35+ PDU) Project Management</span>
+            <span class="tag" data-i18n="exp.cert3">PMP (35+ PDUs)</span>
             <span class="tag" data-i18n="exp.cert4">Agile Fundamentals</span>
             <span class="tag" data-i18n="exp.cert5">Design Thinking</span>
-            <span class="tag" data-i18n="exp.cert6">Microsoft Azure AI Fundamentals (AZ-900)</span>
           </div>
         </div>
         <div>
@@ -917,6 +929,30 @@
             <span class="tag" data-i18n="exp.lang1">Portuguese (Native)</span>
             <span class="tag" data-i18n="exp.lang2">English (Fluent, C2)</span>
             <span class="tag" data-i18n="exp.lang3">French (Intermediate, B1)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tools">
+        <p class="label-small" data-i18n="exp.tools_title">Tools</p>
+        <div class="tools-grid">
+          <div class="tools-group">
+            <p class="tools-label" data-i18n="exp.tools_g1">Content creation</p>
+            <div class="tags">
+              <span class="tag">Adobe Photoshop</span><span class="tag">Illustrator</span><span class="tag">Premiere</span><span class="tag">Canva</span><span class="tag">CapCut</span><span class="tag" data-i18n="exp.tools_genai">Generative AI tools</span>
+            </div>
+          </div>
+          <div class="tools-group">
+            <p class="tools-label" data-i18n="exp.tools_g2">Planning &amp; management</p>
+            <div class="tags">
+              <span class="tag">Asana</span><span class="tag">ClickUp</span><span class="tag">Trello</span><span class="tag">Notion</span><span class="tag">Jira</span><span class="tag">Confluence</span>
+            </div>
+          </div>
+          <div class="tools-group">
+            <p class="tools-label" data-i18n="exp.tools_g3">Digital &amp; marketing</p>
+            <div class="tags">
+              <span class="tag">Meta Ads Manager</span><span class="tag">TikTok Ads Manager</span><span class="tag">GEO</span><span class="tag">CRM (GoHighLevel, Zoho, Pipedrive, Salesforce)</span><span class="tag">n8n</span><span class="tag">Claude Code</span>
+            </div>
           </div>
         </div>
       </div>
@@ -1134,21 +1170,22 @@ const translations = {
       title:"Experience & Education",
       intro:"A summary of my academic and professional journey.",
       subheading_exp:"Experience",
-      item1:{date:"Jun 2026 - Present",role:"Project Manager",org:"nilg.ai",desc:"Managing GEO (Generative Engine Optimisation) projects and social media communication strategies for client accounts, leading lead-generation research and implementation with CRM and AI automation tools, and coordinating end-to-end delivery of AI-marketing projects, from research to implementation."},
+      item1:{date:"Jun 2026 - Present",role:"Project Manager",org:"NILG.AI",desc:"<p>AI and software development consultancy focused on marketing and business growth.</p><ul><li>Primary contact for client leadership across a multi-industry portfolio, including fitness, finance and marketing agencies, turning business goals into roadmaps and advising on emerging AI and martech opportunities.</li><li>Built an acquisition and retention platform for a gym chain integrating Meta Lead Ads, Zoho CRM and MVF software, with a retention risk model that flagged 655 at-risk members; delivered in 3 months across 371 releases.</li><li>Delivered in 2 months an AI-powered marketing and lead-generation platform managing content across 9 channels, turning YouTube live sessions into ready-to-publish carousels and recovering 251 archived content assets.</li><li>Co-led an AI strategy engagement for a full-service digital agency, running stakeholder sessions to diagnose bottlenecks and build a prioritised automation roadmap.</li></ul>"},
       item2:{date:"Sep 2023 - Jun 2026",role:"Marketing and Strategy Consultant",org:"Deloitte Business Consulting",desc:"Led data-driven marketing initiatives, built executive dashboards for weekly product and marketing decisions, and ran VoC and behavioural analysis across channels."},
       item3:{date:"Sep 2022 - Aug 2023",role:"Marketing Analyst",org:"Deloitte Business Consulting",desc:"Analysed customer, market and competitor data, developed reporting frameworks and supported digital performance analysis across websites, portals and social channels."},
       item4:{date:"Jul - Oct 2021",role:"Economic Analysis Intern",org:"Banco de Portugal",desc:"Supported economic and financial analyses through data collection, validation and interpretation, ensuring methodological rigour in reporting."},
       subheading_edu:"Education",
       edu1:{date:"2025 - 2026",role:"Postgraduate in Sports Marketing & Entertainment (APPM-certified)",org:"IPAM Marketing School"},
+      edu4:{date:"2026",role:"AI Social Media Professional Program (in progress, DGERT-certified)",org:"Swonkie"},
       edu2:{date:"2020 - 2022",role:"Master's Degree in Business",org:"School of Economics, University of Porto"},
       edu3:{date:"2017 - 2020",role:"Bachelor's Degree in Economics",org:"School of Economics, UTAD"},
       cert_title:"Certifications & training",
+      tools_title:"Tools",tools_g1:"Content creation",tools_g2:"Planning & management",tools_g3:"Digital & marketing",tools_genai:"Generative AI tools",
       cert1:"Scrum Fundamentals",
       cert2:"PM² Project Management Methodology (European Commission)",
-      cert3:"PMP (35+ PDU) Project Management",
+      cert3:"PMP (35+ PDUs)",
       cert4:"Agile Fundamentals",
       cert5:"Design Thinking",
-      cert6:"Microsoft Azure AI Fundamentals (AZ-900)",
       lang_title:"Languages",
       lang1:"Portuguese (Native)",
       lang2:"English (Fluent, C2)",
@@ -1227,21 +1264,22 @@ const translations = {
       title:"Experiência & Formação",
       intro:"Um resumo do meu percurso académico e profissional.",
       subheading_exp:"Experiência",
-      item1:{date:"Jun 2026 - Presente",role:"Project Manager",org:"nilg.ai",desc:"Gestão de projetos de GEO (Generative Engine Optimisation) e de estratégias de comunicação em redes sociais para contas de clientes, liderança da pesquisa e implementação de geração de leads com sistemas de CRM e ferramentas de automação com IA, e coordenação da entrega de ponta a ponta de projetos de marketing com IA, da pesquisa à implementação."},
+      item1:{date:"Jun 2026 - Presente",role:"Project Manager",org:"NILG.AI",desc:"<p>Consultora de IA e desenvolvimento de software focada em marketing e crescimento de negócio.</p><ul><li>Principal ponto de contacto da liderança dos clientes num portefólio multissetorial, incluindo fitness, finanças e agências de marketing, transformando objetivos de negócio em roadmaps e aconselhando sobre novas oportunidades de IA e martech.</li><li>Construí uma plataforma de aquisição e retenção para uma cadeia de ginásios, integrando Meta Lead Ads, Zoho CRM e o software MVF, com um modelo de risco de retenção que sinalizou 655 sócios em risco; entregue em 3 meses, ao longo de 371 releases.</li><li>Entreguei em 2 meses uma plataforma de marketing e geração de leads com IA que gere conteúdos em 9 canais, transforma sessões em direto no YouTube em carrosséis prontos a publicar e recuperou 251 conteúdos arquivados.</li><li>Co-liderei um projeto de estratégia de IA para uma agência digital full-service, conduzindo sessões com stakeholders para diagnosticar bloqueios e construir um roadmap de automação priorizado.</li></ul>"},
       item2:{date:"Set 2023 - Jun 2026",role:"Consultora de Marketing e Estratégia",org:"Deloitte Business Consulting",desc:"Liderança de iniciativas de marketing orientadas por dados, criação de dashboards executivos para decisões semanais de produto e marketing, e análise de VoC e comportamental entre canais."},
       item3:{date:"Set 2022 - Ago 2023",role:"Analista de Marketing",org:"Deloitte Business Consulting",desc:"Análise de dados de clientes, mercado e concorrência, desenvolvimento de frameworks de reporting e apoio à análise de performance digital em websites, portais e redes sociais."},
       item4:{date:"Jul - Out 2021",role:"Estagiária de Análise Económica",org:"Banco de Portugal",desc:"Apoio a análises económicas e financeiras através de recolha, validação e interpretação de dados, garantindo rigor metodológico no reporting."},
       subheading_edu:"Formação",
       edu1:{date:"2025 - 2026",role:"Pós-Graduação em Marketing de Desporto e Entretenimento (certificada pela APPM)",org:"IPAM Marketing School"},
+      edu4:{date:"2026",role:"AI Social Media Professional Program (em curso, certificado pela DGERT)",org:"Swonkie"},
       edu2:{date:"2020 - 2022",role:"Mestrado em Gestão",org:"Faculdade de Economia, Universidade do Porto"},
       edu3:{date:"2017 - 2020",role:"Licenciatura em Economia",org:"Faculdade de Economia, UTAD"},
       cert_title:"Certificações e formação",
+      tools_title:"Ferramentas",tools_g1:"Criação de conteúdo",tools_g2:"Planeamento e gestão",tools_g3:"Digital e marketing",tools_genai:"Ferramentas de IA generativa",
       cert1:"Scrum Fundamentals",
       cert2:"PM² Metodologia de Gestão de Projetos (Comissão Europeia)",
-      cert3:"PMP (35+ PDU) Project Management",
+      cert3:"PMP (35+ PDUs)",
       cert4:"Agile Fundamentals",
       cert5:"Design Thinking",
-      cert6:"Microsoft Azure AI Fundamentals (AZ-900)",
       lang_title:"Línguas",
       lang1:"Português (Nativo)",
       lang2:"Inglês (Fluente, C2)",
@@ -1320,21 +1358,22 @@ const translations = {
       title:"Expérience & Formation",
       intro:"Un résumé de mon parcours académique et professionnel.",
       subheading_exp:"Expérience",
-      item1:{date:"Juin 2026 - Présent",role:"Project Manager",org:"nilg.ai",desc:"Gestion de projets GEO (Generative Engine Optimisation) et de stratégies de communication sur les réseaux sociaux pour des comptes clients, pilotage de la recherche et de la mise en œuvre de la génération de leads avec des CRM et des outils d'automatisation par IA, et coordination de bout en bout de projets de marketing IA, de la recherche à la mise en œuvre."},
+      item1:{date:"Juin 2026 - Présent",role:"Project Manager",org:"NILG.AI",desc:"<p>Cabinet de conseil en IA et en développement logiciel axé sur le marketing et la croissance des entreprises.</p><ul><li>Interlocutrice principale des directions clientes sur un portefeuille multisectoriel, incluant le fitness, la finance et des agences marketing, traduisant les objectifs business en feuilles de route et conseillant sur les opportunités émergentes en IA et martech.</li><li>Conception d'une plateforme d'acquisition et de fidélisation pour une chaîne de salles de sport intégrant Meta Lead Ads, Zoho CRM et le logiciel MVF, avec un modèle de risque d'attrition qui a identifié 655 membres à risque, livrée en 3 mois en 371 releases.</li><li>Livraison en 2 mois d'une plateforme de marketing et de génération de leads pilotée par l'IA, gérant les contenus sur 9 canaux, transformant les lives YouTube en carrousels prêts à publier et récupérant 251 contenus archivés.</li><li>Co-pilotage d'une mission de stratégie IA pour une agence digitale full-service, avec l'animation d'ateliers avec les parties prenantes pour diagnostiquer les blocages et construire une feuille de route d'automatisation priorisée.</li></ul>"},
       item2:{date:"Sept 2023 - Juin 2026",role:"Consultante Marketing et Stratégie",org:"Deloitte Business Consulting",desc:"Pilotage d'initiatives marketing fondées sur les données, création de tableaux de bord exécutifs pour les décisions hebdomadaires de produit et de marketing, et analyses VoC et comportementales multicanal."},
       item3:{date:"Sept 2022 - Août 2023",role:"Analyste Marketing",org:"Deloitte Business Consulting",desc:"Analyse des données clients, de marché et concurrentielles, développement de cadres de reporting et soutien à l'analyse de performance digitale sur sites web, portails et réseaux sociaux."},
       item4:{date:"Juil - Oct 2021",role:"Stagiaire en Analyse Économique",org:"Banco de Portugal",desc:"Soutien aux analyses économiques et financières via la collecte, la validation et l'interprétation des données, garantissant la rigueur méthodologique du reporting."},
       subheading_edu:"Formation",
       edu1:{date:"2025 - 2026",role:"Postgraduate en Sports Marketing & Entertainment (certifié APPM)",org:"IPAM Marketing School"},
+      edu4:{date:"2026",role:"AI Social Media Professional Program (en cours, certifié DGERT)",org:"Swonkie"},
       edu2:{date:"2020 - 2022",role:"Master en Gestion",org:"École d'Économie, Université de Porto"},
       edu3:{date:"2017 - 2020",role:"Licence en Économie",org:"École d'Économie, UTAD"},
       cert_title:"Certifications et formations",
+      tools_title:"Outils",tools_g1:"Création de contenu",tools_g2:"Planification et gestion",tools_g3:"Digital et marketing",tools_genai:"Outils d'IA générative",
       cert1:"Scrum Fundamentals",
       cert2:"PM² Méthodologie de gestion de projet (Commission européenne)",
-      cert3:"PMP (35+ PDU) Project Management",
+      cert3:"PMP (35+ PDUs)",
       cert4:"Agile Fundamentals",
       cert5:"Design Thinking",
-      cert6:"Microsoft Azure AI Fundamentals (AZ-900)",
       lang_title:"Langues",
       lang1:"Portugais (langue maternelle)",
       lang2:"Anglais (Courant, C2)",
@@ -1413,21 +1452,22 @@ const translations = {
       title:"Experiencia y Formación",
       intro:"Un resumen de mi trayectoria académica y profesional.",
       subheading_exp:"Experiencia",
-      item1:{date:"Jun 2026 - Presente",role:"Project Manager",org:"nilg.ai",desc:"Gestión de proyectos de GEO (Generative Engine Optimisation) y de estrategias de comunicación en redes sociales para cuentas de clientes, dirección de la investigación e implementación de generación de leads con CRM y herramientas de automatización con IA, y coordinación de extremo a extremo de proyectos de marketing con IA, de la investigación a la implementación."},
+      item1:{date:"Jun 2026 - Presente",role:"Project Manager",org:"NILG.AI",desc:"<p>Consultora de IA y desarrollo de software centrada en el marketing y el crecimiento empresarial.</p><ul><li>Principal punto de contacto de la dirección de los clientes en una cartera multisectorial, que incluye fitness, finanzas y agencias de marketing, convirtiendo objetivos de negocio en roadmaps y asesorando sobre nuevas oportunidades de IA y martech.</li><li>Construí una plataforma de captación y retención para una cadena de gimnasios que integra Meta Lead Ads, Zoho CRM y el software MVF, con un modelo de riesgo de retención que identificó 655 socios en riesgo; entregada en 3 meses a lo largo de 371 releases.</li><li>Entregué en 2 meses una plataforma de marketing y generación de leads con IA que gestiona contenidos en 9 canales, convierte sesiones en directo de YouTube en carruseles listos para publicar y recuperó 251 contenidos archivados.</li><li>Codirigí un proyecto de estrategia de IA para una agencia digital full-service, dirigiendo sesiones con stakeholders para diagnosticar cuellos de botella y construir una hoja de ruta de automatización priorizada.</li></ul>"},
       item2:{date:"Sep 2023 - Jun 2026",role:"Consultora de Marketing y Estrategia",org:"Deloitte Business Consulting",desc:"Liderazgo de iniciativas de marketing basadas en datos, creación de dashboards ejecutivos para decisiones semanales de producto y marketing, y análisis VoC y de comportamiento en distintos canales."},
       item3:{date:"Sep 2022 - Ago 2023",role:"Analista de Marketing",org:"Deloitte Business Consulting",desc:"Análisis de datos de clientes, mercado y competencia, desarrollo de marcos de reporting y apoyo al análisis de rendimiento digital en sitios web, portales y redes sociales."},
       item4:{date:"Jul - Oct 2021",role:"Becaria de Análisis Económico",org:"Banco de Portugal",desc:"Apoyo a análisis económicos y financieros mediante la recopilación, validación e interpretación de datos, garantizando el rigor metodológico en los informes."},
       subheading_edu:"Formación",
       edu1:{date:"2025 - 2026",role:"Posgrado en Marketing Deportivo y Entretenimiento (certificado APPM)",org:"IPAM Marketing School"},
+      edu4:{date:"2026",role:"AI Social Media Professional Program (en curso, certificado por la DGERT)",org:"Swonkie"},
       edu2:{date:"2020 - 2022",role:"Máster en Empresariales",org:"Facultad de Economía, Universidad de Oporto"},
       edu3:{date:"2017 - 2020",role:"Grado en Economía",org:"Facultad de Economía, UTAD"},
       cert_title:"Certificaciones y formación",
+      tools_title:"Herramientas",tools_g1:"Creación de contenido",tools_g2:"Planificación y gestión",tools_g3:"Digital y marketing",tools_genai:"Herramientas de IA generativa",
       cert1:"Scrum Fundamentals",
       cert2:"PM² Metodología de gestión de proyectos (Comisión Europea)",
-      cert3:"PMP (35+ PDU) Project Management",
+      cert3:"PMP (35+ PDUs)",
       cert4:"Agile Fundamentals",
       cert5:"Design Thinking",
-      cert6:"Microsoft Azure AI Fundamentals (AZ-900)",
       lang_title:"Idiomas",
       lang1:"Portugués (Nativo)",
       lang2:"Inglés (Fluido, C2)",
@@ -1724,6 +1764,7 @@ function renderReader(post, ui, keepPos){
 
 function openReader(post, opener){
   pm.post = post; pm.opener = opener || null; pm.open = true;
+  mcTrack('post-' + post + '-' + currentLang);
   pmEl.root.hidden = false;
   document.documentElement.style.overflow = 'hidden';
   renderReader(post, currentLang, false);
@@ -1799,18 +1840,31 @@ function refreshFormStatus(){
     formStatus('form_sending', 'info');
     fetch(endpoint, {method:'POST', body:new FormData(form), headers:{'Accept':'application/json'}})
       .then(function(r){
-        if(r.ok){ form.reset(); formStatus('form_ok', 'ok'); form.classList.add('sent'); again.hidden = false; }
+        if(r.ok){ mcTrack('formulario-enviado'); form.reset(); formStatus('form_ok', 'ok'); form.classList.add('sent'); again.hidden = false; }
         else { formStatus('form_error', 'error'); }
       })
       .catch(function(){ formStatus('form_error', 'error'); })
       .then(function(){ btn.disabled = false; });
   });
 })();
+/* ===== visitor stats: named events (only sent when GoatCounter is loaded) ===== */
+function mcTrack(name){
+  try{ if(window.goatcounter && window.goatcounter.count) window.goatcounter.count({path:name, title:name, event:true}); }catch(e){}
+}
+document.addEventListener('click', function(e){
+  const a = e.target.closest('a');
+  if(!a) return;
+  if(a.id === 'cvBtn') mcTrack('cv-download');
+  else if(a.id === 'planDl') mcTrack('plano-pdf');
+  else if(/linkedin\.com/.test(a.href)) mcTrack('clique-linkedin');
+  else if(a.href.indexOf('mailto:') === 0) mcTrack('clique-email');
+});
 /* ===== one-page plan summary ===== */
 const smEl = {root:document.getElementById('planModal'), close:document.getElementById('smClose')};
 const sm = {open:false, opener:null};
 function openPlan(opener){
   sm.open = true; sm.opener = opener || null;
+  mcTrack('plano-resumo');
   smEl.root.hidden = false;
   document.documentElement.style.overflow = 'hidden';
   requestAnimationFrame(function(){ smEl.root.classList.add('on'); smEl.close.focus(); });
@@ -1876,6 +1930,7 @@ document.addEventListener('keydown', function(e){
 
 applyLanguage(detectLang());
 </script>
+
 
 </body>
 </html>
